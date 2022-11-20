@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Final Project Visualization Prototype</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.css" integrity="sha512-j5rbjelirQpuvpLBGAo+rYp3mdBd75uZBqFdtBQytHxQEUWwdbLyDMpDuVm7xVV1MsuEKCyH7KtjLP75lH5+dQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- WRAPPER -->
+    <div class="container-fluid" style="height: 100vh; padding-top: 1vh; background-color: ">
+    <div id="fullpage">
+        <div class="section">
+            <div class="row">
+                <h1>The Parks at 150</h1>
+                <h2>Celebrating, Exploring, and Supporting the U.S. National Parks</h2>
+
+                <p> The national parks are home to an enormous amount of biodiversity. Our data consists of 27 states,
+                    56 national parks, 46k+ identified unique species. Amongst these, the following 10 parks have the
+                    greatest number of visitors annually.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 1</h1>
+                <h2>How do the parks rank (annually) by visitation numbers?</h2>
+                <p>Our first goal was to get a better understanding of which parks get the most visitors and explore
+                different trends for why this may be case. So, this visualization helps us understand which of the
+                national parks bring in the most visitors which will allow us to figure out exactly why this may be
+                the case. </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 2</h1>
+                <h2>Recreational Visitors (in 2021) by Month</h2>
+                <p> After seeing the annual changes in visitation, we wanted to take a more granular look, exploring
+                just the year of 2021. This allows us to see if different parks attract different numbers of visitors
+                depending on the month or season, and will give us more information to come up with newer questions
+                that we may have. </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 3</h1>
+                <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
+                is a primary driving force for visitation. To do so, we began by exploring which states tended to
+                have the greatest number of species. Hovering over an individual state will give us the number of
+                species for each of the parks in the state as well. </p>
+                <h2>Rising Insight:</h2>
+                <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
+                <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
+                <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 4</h1>
+                <p> Aside from geography, we wanted to see if certain species were associated with different parks.
+                This could give us clues about whether visitation of certain parks could possibly be correlated
+                with the presence of certain species. </p>
+                <h2>DRAFT: What species are seen across multiple parks?</h2>
+                <p>TODO: [1] Provide filtering and tooltip mechanisms for diagram. See Figure 5 in Process Book for
+                    Sketch. [2] Consider representing nodes in different graphical format (i.e., given that some
+                    species are present in more than two parks).</p>
+                <div id="chord"></div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 5</h1>
+                <p> We realized after examining the species in the parks, that biodiversity encompasses a range of
+                different factors and components. As such, we utilized a spider chart to be able to compare parks
+                on different dimensions as it relates to biodiversity which could also help us explore different
+                trends that contribute to visitation. </p>
+                <h2>Main Insight:</h2>
+                <p>U.S. National Parks with larger visitation numbers tend to be the parks with
+                    tremendous biodiversity — given the large number of species within these parks
+                    that are either “Species of Concern” or “Endangered,” these parks offer
+                    tremendous opportunities to educate visitors on the role that humans play
+                    in protecting these diverse ecosystems.</p>
+
+                <p><b>Innovative View (First Design) — TODOs: [1] Set a default view (i.e., that is some
+                    combination of selected parks). [2] Move checkboxes into a floating box on the side.</b></p>
+                <!-- Container for spiderChart -->
+                <div class="row justify-content-center" style="height: 600px">
+                    <div id="spiderChart" style="height: 100vh;">
+                    </div>
+                </div>
+            </div>
+            <!-- Container for checkboxes and update button-->
+            <div class="container-fluid">
+                <div class="row justify-content-center" style="height: 50%">
+                    <div id="checkBoxes"></div>
+                </div>
+                <div class="row justify-content-center btn-row">
+                    <button id="parksBtn" class="btn btn-light align-self-center" type="button" onclick="updateParks()">Enter!</button>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Chart 6</h1>
+                <p> To further examine the broad category of species, we wanted to take a look to see if the presence
+                    of certain endangered species may contribute to visitation. So, this visualization allows us
+                    to filter certain parks and the see the number of endangered species that are present. </p>
+                <h2>DRAFT: How many species in the Park(s) are endangered?</h2>
+                <p>TODO: Provide mechanism for filtering parks and endangered status.</p>
+                <div id="endangered" style="height: 100vh;"></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <h1>Solution</h1>
+                <p>From this exploration, it is clear that visitation is impacted by the biodiversity of
+                    tha national parks. Therefore, in addition to the ethical implications of maintaining
+                    biodiversity, there is also a practical reason since biodiversity helps drive
+                    traffic to the parks and contributes to ecotourism in many states.
+                    To maintain the great biodiversity of the national parks and the world,
+                    we hope our insights on the national parks can provide a way for people
+                    to appreciate our ecosystems and steer efforts towards protecting our
+                    biodiversity.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v7.js"></script>
+
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+    <!-- Full Page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.js" integrity="sha512-0VP6jI0mkS2XbhaNluFHhxiNR9S1U/0qqQPqSrLKt+aG5vOHE/fqU3iCWsL9aSC5rRIza1AO4GMMIA67WXp9oQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- OWN JS -->
+    <script src="js/helpers.js"></script>
+    <script src="js/mapVis.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src="js/chord.js"></script>
+    <script src="js/endangeredBarChart.js"></script>
+    <script src="js/spiderChart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
