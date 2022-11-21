@@ -103,22 +103,25 @@
                         tremendous opportunities to educate visitors on the role that humans play
                         in protecting these diverse ecosystems.</p>
 
-                    <p><b>Innovative View (First Design) — TODOs: [1] Set a default view (i.e., that is some
-                            combination of selected parks). [2] Move checkboxes into a floating box on the side.</b></p>
+                    <p><b>Innovative View</b></p>
                     <!-- Container for spiderChart -->
                     <div class="row justify-content-center" style="height: 600px">
-                        <div id="spiderChart" style="height: 100vh;">
+                        <div class="col-md-6">
+                            <div id="spiderChart" style="height: 100vh;">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Container for checkboxes and update button-->
-                <div class="container-fluid">
-                    <div class="row justify-content-center" style="height: 50%">
-                        <div id="checkBoxes"></div>
-                    </div>
-                    <div class="row justify-content-center btn-row">
-                        <button id="parksBtn" class="btn btn-light align-self-center" type="button"
-                            onclick="updateParks()">Enter!</button>
+                        <div class="col-md-6">
+                            <!-- Container for checkboxes and update button-->
+                            <div class="container-fluid">
+                                <div class="row justify-content-center" style="height: 50%">
+                                    <div id="checkBoxes"></div>
+                                </div>
+                                <div class="row justify-content-center btn-row">
+                                    <button id="parksBtn" class="btn btn-light align-self-center" type="button"
+                                            onclick="updateParks()">Enter!</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
