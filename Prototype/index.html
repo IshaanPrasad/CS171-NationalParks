@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.css"
         integrity="sha512-j5rbjelirQpuvpLBGAo+rYp3mdBd75uZBqFdtBQytHxQEUWwdbLyDMpDuVm7xVV1MsuEKCyH7KtjLP75lH5+dQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Load Leaflet -->
+    <link rel="stylesheet" href="css/leaflet.css">
 </head>
 
 <body>
@@ -131,6 +133,17 @@
             </div>
             <div class="section">
                 <div class="row">
+                    <h1>Chart 7</h1>
+                    <p> We wanted to take a look at exactly which parks had which endangered species so we could better
+                    understand exactly which parks have more endangered species.</p>
+                    <h2>Which endangered species are associated with each park?</h2>
+                    <div class="container">
+                        <div id="mapSpecies" style="height: 60vh;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row">
                     <h1>Solution</h1>
                     <p>From this exploration, it is clear that visitation is impacted by the biodiversity of
                         tha national parks. Therefore, in addition to the ethical implications of maintaining
@@ -156,6 +169,9 @@
         crossorigin="anonymous"></script>
 
 
+    <!--Leaflet JS-->
+    <script src="js/leaflet.js"></script>
+
     <!-- d3 -->
     <script src="https://d3js.org/d3.v7.js"></script>
 
@@ -176,6 +192,7 @@
     <script src="js/endangeredBarChart.js"></script>
     <script src="js/spiderChart.js"></script>
     <script src="js/bumpChart.js"></script>
+    <script src="js/mapSpecies.js"></script>
     <script src="js/main.js"></script>
 </body>
 

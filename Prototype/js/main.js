@@ -57,6 +57,9 @@ function initMainPage(allDataArray) {
   // Chart 6 - Endangered Species
   endangeredBarChart = new EndangeredBarChart("endangered", allDataArray[1], allDataArray[2]);
 
+  // Chart 7 - Endangered Species by Park
+  mapSpeciesChart = new MapSpecies("mapSpecies", allDataArray[1], allDataArray[2], [37.8, -96])
+
   // Chord
   matrix = [
     [204, 0, 0, 0],
