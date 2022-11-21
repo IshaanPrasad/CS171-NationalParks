@@ -30,3 +30,13 @@
     stroke: #35388a;
     fill: #5558bb;
 }
+
+body {
+    background-color: rgb(237, 228, 224);
+    font-family: "DM Sans"
+}
+
+.section {
+    padding-left: 30px;
+    padding-right: 30px;
+}
