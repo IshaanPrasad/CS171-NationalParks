@@ -19,7 +19,7 @@ class BarChart {
   initVis() {
     let vis = this;
 
-    vis.margin = { top: 20, right: 20, bottom: 20, left: 40 };
+    vis.margin = { top: 20, right: 20, bottom: 180, left: 40 };
     vis.width =
       document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
     vis.height =
@@ -78,7 +78,7 @@ class BarChart {
     );
 
     let state = parksByState.find((value) => value.key === nameConverter.getAbbreviation(selectedState));
-    vis.displayData = state ? state.value.sort((a, b) => b.species - a.species) : vis.displayData;
+    vis.displayData = state ? state.value.sort((a, b) => b.species - a.species) : [];
 
     // Update the visualization
     vis.updateVis();
@@ -94,7 +94,16 @@ class BarChart {
     vis.y.domain([0, d3.max(vis.displayData, (d) => d.species) * 1.1]);
 
     // draw axes
-    vis.svg.select(".x-axis").call(vis.xAxis);
+    vis.svg
+      .select(".x-axis")
+      .call(vis.xAxis)
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function (d) {
+        return "rotate(-45)";
+      });
     vis.svg.select(".y-axis").call(vis.yAxis);
 
     // draw bars
