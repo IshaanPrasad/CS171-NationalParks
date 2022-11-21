@@ -20,13 +20,23 @@
 
 .state, .bars {
     stroke-width: 1px;
-    stroke: #0c4547;
+    stroke: #665A48;
 }
 .bars {
-    fill: #136D70;
+    fill: #4b683b;
 }
 .hovered {
     stroke-width: 2px; 
-    stroke: #35388a;
-    fill: #5558bb;
+    stroke: #9F8772;
+    fill: #E6BA95;
+}
+
+body {
+    background-color: rgb(237, 228, 224);
+    font-family: "DM Sans"
+}
+
+.section {
+    padding-left: 30px;
+    padding-right: 30px;
 }
