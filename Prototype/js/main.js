@@ -3,7 +3,7 @@
  * * * * * * * * * * * * * */
 
 // init global variables, switches, helper functions
-let barChart, mapVis, spiderChart, endangeredBarChart, chord;
+let barChart, mapVis, spiderChart, endangeredBarChart, chord, bumpChart;
 let selectedState = "California";
 
 // load data using promises
@@ -11,14 +11,15 @@ let promises = [
   d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json"),
   d3.csv("data/parks.csv"),
   d3.csv("data/species.csv"),
-  d3.csv("data/park_data_processed.csv", row => {
-    row.Acres = +row.Acres
-    row.Species_ID_nunique = +row.Species_ID_nunique
-    row.Species_ID_Rare = +row.Species_ID_Rare
-    row.Species_ID_Endangered = +row.Species_ID_Endangered
-    row.Species_ID_Native = +row.Species_ID_Native
-    return row
-  })
+  d3.csv("data/park_data_processed.csv", (row) => {
+    row.Acres = +row.Acres;
+    row.Species_ID_nunique = +row.Species_ID_nunique;
+    row.Species_ID_Rare = +row.Species_ID_Rare;
+    row.Species_ID_Endangered = +row.Species_ID_Endangered;
+    row.Species_ID_Native = +row.Species_ID_Native;
+    return row;
+  }),
+  d3.csv("data/visitors.csv"),
 ];
 
 Promise.all(promises)
@@ -40,56 +41,52 @@ function initMainPage(allDataArray) {
   // activity 2, force layout
   mapVis = new MapVis("mapDiv", allDataArray[0], allDataArray[1], allDataArray[2]);
   barChart = new BarChart("barDiv", allDataArray[1], allDataArray[2]);
-
+  bumpChart = new BumpChart("bumpDiv", allDataArray[4]);
 
   // Chart 5 (Spider Chart)
-  let spiderChartData = allDataArray[3]
-  let checkBoxHTML = ""
-  spiderChartData.forEach(d => {
+  let spiderChartData = allDataArray[3];
+  let checkBoxHTML = "";
+  spiderChartData.forEach((d) => {
     checkBoxHTML += `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${d["Park Code"]}" name="${d["Park Name"]}" value="${d["Park Name"]}">
-            <label class="form-check-label" htmlFor="${d["Park Code"]}">${d["Park Name"]}</label></div>`
-  })
-  document.getElementById("checkBoxes").innerHTML = checkBoxHTML
+            <label class="form-check-label" htmlFor="${d["Park Code"]}">${d["Park Name"]}</label></div>`;
+  });
+  document.getElementById("checkBoxes").innerHTML = checkBoxHTML;
 
-  spiderChart = new SpiderChart("spiderChart", spiderChartData)
-
+  spiderChart = new SpiderChart("spiderChart", spiderChartData);
 
   // Chart 6 - Endangered Species
   endangeredBarChart = new EndangeredBarChart("endangered", allDataArray[1], allDataArray[2]);
 
   // Chord
   matrix = [
-    [204,  0, 0, 0],
-    [ 0, 488, 0, 0],
-    [ 0, 0, 855, 0],
-    [ 0, 0, 0, 332]
+    [204, 0, 0, 0],
+    [0, 488, 0, 0],
+    [0, 0, 855, 0],
+    [0, 0, 0, 332],
   ];
 
-  chordChart = new Chord("chord", matrix)
+  chordChart = new Chord("chord", matrix);
 }
-
-
 
 // Used for SpiderChart
 function updateParks() {
-  console.log("Updating Parks")
+  console.log("Updating Parks");
 
-  spiderChart.wrangleData()
+  spiderChart.wrangleData();
 }
 
-
 // Fullpage Layout Settings -- Source: https://alvarotrigo.com/fullPage/
-var myFullpage = new fullpage('#fullpage', {
+var myFullpage = new fullpage("#fullpage", {
   // Navigation
-  menu: '#menu',
+  menu: "#menu",
   lockAnchors: false,
-  anchors:['firstPage', 'secondPage'],
+  anchors: ["firstPage", "secondPage"],
   navigation: true,
-  navigationPosition: 'right',
-  navigationTooltips: [''],
+  navigationPosition: "right",
+  navigationTooltips: [""],
   showActiveTooltip: false,
   slidesNavigation: false,
-  slidesNavPosition: 'bottom',
+  slidesNavPosition: "bottom",
 
   // Scrolling
   css3: true,
@@ -98,8 +95,8 @@ var myFullpage = new fullpage('#fullpage', {
   fitToSection: true,
   fitToSectionDelay: 600,
   scrollBar: false,
-  easing: 'easeInOutCubic',
-  easingcss3: 'ease',
+  easing: "easeInOutCubic",
+  easingcss3: "ease",
   loopBottom: false,
   loopTop: false,
   loopHorizontal: true,
@@ -111,7 +108,7 @@ var myFullpage = new fullpage('#fullpage', {
   offsetSections: false,
   resetSliders: false,
   fadingEffect: false,
-  normalScrollElements: '#element1, .element2',
+  normalScrollElements: "#element1, .element2",
   scrollOverflow: true,
   scrollOverflowMacStyle: false,
   scrollOverflowReset: false,
@@ -125,44 +122,41 @@ var myFullpage = new fullpage('#fullpage', {
 
   // Design
   controlArrows: true,
-  controlArrowsHTML: [
-    '<div class="fp-arrow"></div>',
-    '<div class="fp-arrow"></div>'
-  ],
+  controlArrowsHTML: ['<div class="fp-arrow"></div>', '<div class="fp-arrow"></div>'],
   verticalCentered: true,
-  sectionsColor : ['#fff'],
-  paddingTop: '3em',
-  paddingBottom: '10px',
-  fixedElements: '#header, .footer',
+  sectionsColor: ["#fff"],
+  paddingTop: "3em",
+  paddingBottom: "10px",
+  fixedElements: "#header, .footer",
   responsiveWidth: 0,
   responsiveHeight: 0,
   responsiveSlides: false,
   parallax: false,
-  parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+  parallaxOptions: { type: "reveal", percentage: 62, property: "translate" },
   dropEffect: false,
-  dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+  dropEffectOptions: { speed: 2300, color: "#F82F4D", zIndex: 9999 },
   waterEffect: false,
-  waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
+  waterEffectOptions: { animateContent: true, animateOnMouseMove: true },
   cards: false,
-  cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+  cardsOptions: { perspective: 100, fadeContent: true, fadeBackground: true },
 
   // Custom selectors
-  sectionSelector: '.section',
-  slideSelector: '.slide',
+  sectionSelector: ".section",
+  slideSelector: ".slide",
 
   lazyLoading: true,
   observer: true,
-  credits: { enabled: false, label: 'Christopher Cheng, Ishaan Prasad, Omar Shareef', position: 'right'},
+  credits: { enabled: false, label: "Christopher Cheng, Ishaan Prasad, Omar Shareef", position: "right" },
 
   // Events
-  beforeLeave: function(origin, destination, direction, trigger){},
-  onLeave: function(origin, destination, direction, trigger){},
-  afterLoad: function(origin, destination, direction, trigger){},
-  afterRender: function(){},
-  afterResize: function(width, height){},
-  afterReBuild: function(){},
-  afterResponsive: function(isResponsive){},
-  afterSlideLoad: function(section, origin, destination, direction, trigger){},
-  onSlideLeave: function(section, origin, destination, direction, trigger){},
-  onScrollOverflow: function(section, slide, position, direction){}
+  beforeLeave: function (origin, destination, direction, trigger) {},
+  onLeave: function (origin, destination, direction, trigger) {},
+  afterLoad: function (origin, destination, direction, trigger) {},
+  afterRender: function () {},
+  afterResize: function (width, height) {},
+  afterReBuild: function () {},
+  afterResponsive: function (isResponsive) {},
+  afterSlideLoad: function (section, origin, destination, direction, trigger) {},
+  onSlideLeave: function (section, origin, destination, direction, trigger) {},
+  onScrollOverflow: function (section, slide, position, direction) {},
 });
