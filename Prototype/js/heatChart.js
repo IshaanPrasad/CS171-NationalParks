@@ -18,7 +18,7 @@ class HeatChart {
   initVis() {
     let vis = this;
 
-    vis.margin = { top: 100, right: 20, bottom: 60, left: 200 };
+    vis.margin = { top: 100, right: 20, bottom: 20, left: 200 };
     vis.width =
       document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
     vis.height =
