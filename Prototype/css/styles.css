@@ -40,3 +40,8 @@ body {
     padding-left: 30px;
     padding-right: 30px;
 }
+
+.title {
+    font-weight: bold;
+    font-size: large;
+}
