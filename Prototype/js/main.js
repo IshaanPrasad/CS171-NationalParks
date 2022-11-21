@@ -129,7 +129,7 @@ var myFullpage = new fullpage("#fullpage", {
   controlArrows: true,
   controlArrowsHTML: ['<div class="fp-arrow"></div>', '<div class="fp-arrow"></div>'],
   verticalCentered: true,
-  sectionsColor: ["rgb(200, 219, 190)"],
+  sectionsColor: ["#C8DBBE", "#EDE4E0", "#bea895", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#C8DBBE"],
   paddingTop: "3em",
   paddingBottom: "10px",
   fixedElements: "#header, .footer",
