@@ -3,7 +3,7 @@
  * * * * * * * * * * * * * */
 
 // init global variables, switches, helper functions
-let barChart, mapVis, spiderChart, endangeredBarChart, chord, bumpChart;
+let barChart, mapVis, spiderChart, endangeredBarChart, chord, bumpChart, heatChart;
 let selectedState = "California";
 
 // load data using promises
@@ -43,6 +43,8 @@ function initMainPage(allDataArray) {
   barChart = new BarChart("barDiv", allDataArray[1], allDataArray[2]);
   bumpChart = new BumpChart("bumpDiv", allDataArray[4]);
 
+  heatChart = new HeatChart("heatDiv", allDataArray[4]);
+
   // Chart 5 (Spider Chart)
   let spiderChartData = allDataArray[3];
   let checkBoxHTML = "";
@@ -58,7 +60,7 @@ function initMainPage(allDataArray) {
   endangeredBarChart = new EndangeredBarChart("endangered", allDataArray[1], allDataArray[2]);
 
   // Chart 7 - Endangered Species by Park
-  mapSpeciesChart = new MapSpecies("mapSpecies", allDataArray[1], allDataArray[2], [37.8, -96])
+  mapSpeciesChart = new MapSpecies("mapSpecies", allDataArray[1], allDataArray[2], [37.8, -96]);
 
   // Chord
   matrix = [
