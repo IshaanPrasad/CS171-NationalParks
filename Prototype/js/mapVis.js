@@ -41,7 +41,7 @@ class MapVis {
       .attr("class", "title")
       .attr("id", "map-title")
       .append("text")
-      .text("Choropleth of number of species per state")
+      .text("Unique species per state")
       .attr("transform", `translate(${vis.width / 2}, 20)`)
       .attr("text-anchor", "middle");
 
@@ -99,7 +99,6 @@ class MapVis {
         vis.tooltip.style("opacity", 0).style("left", 0).style("top", 0).html(``);
 
         // update selected state on hover out and trigger updates for other charts
-        selectedState = "";
         mapVis.updateVis();
         barChart.wrangleData();
       });
