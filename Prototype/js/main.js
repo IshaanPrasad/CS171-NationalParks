@@ -3,8 +3,9 @@
  * * * * * * * * * * * * * */
 
 // init global variables, switches, helper functions
-let barChart, mapVis, spiderChart, endangeredBarChart, chord, bumpChart, heatChart;
+let barChart, mapVis, spiderChart, endangeredBarChart, endangeredInfoChart, chord, bumpChart, heatChart;
 let selectedState = "California";
+let selectedEndangeredPark = "Great Smoky Mountains National Park";
 
 // load data using promises
 let promises = [
@@ -57,7 +58,8 @@ function initMainPage(allDataArray) {
   spiderChart = new SpiderChart("spiderChart", spiderChartData);
 
   // Chart 6 - Endangered Species
-  endangeredBarChart = new EndangeredBarChart("endangered", allDataArray[1], allDataArray[2]);
+  endangeredBarChart = new EndangeredBarChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
+  endangeredInfoChart = new EndangeredInfoChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
 
   // Chart 7 - Endangered Species by Park
   mapSpeciesChart = new MapSpecies("mapSpecies", allDataArray[1], allDataArray[2], [37.8, -96]);
@@ -78,6 +80,14 @@ function updateParks() {
   console.log("Updating Parks");
 
   spiderChart.wrangleData();
+}
+
+// Used for endangered charts
+let selectedEndangered = document.getElementById("endangeredSelector").value;
+
+function endangeredChange() {
+  selectedEndangered = document.getElementById("endangeredSelector").value;
+  endangeredInfoChart.wrangleData();
 }
 
 // Fullpage Layout Settings -- Source: https://alvarotrigo.com/fullPage/

@@ -45,3 +45,34 @@ body {
     font-weight: bold;
     font-size: large;
 }
+
+.dashboard-item-container {
+    background-color: whitesmoke; 
+    margin: 6px; 
+    padding: 8px;
+    padding-bottom: 2px;
+}
+
+.dashboard-item-flex {
+    width:100%; 
+    height:100%; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.dashboard-item-label {
+    text-transform: uppercase; 
+    font-weight: 600; 
+    color: rgb(68,68,68);
+}
+.dashboard-item-value {
+    margin-top: auto; 
+    font-weight: 700
+}
+
+.list-group{
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}

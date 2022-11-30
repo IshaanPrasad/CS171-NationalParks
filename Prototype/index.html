@@ -121,7 +121,66 @@
                         to filter certain parks and the see the number of endangered species that are present. </p>
                     <h2>DRAFT: How many species in the Park(s) are endangered?</h2>
                     <p>TODO: Provide mechanism for filtering parks and endangered status.</p>
-                    <div id="endangered" style="height: 71vh;"></div>
+                    <div class="row">
+                        <div class="col-md-6" id="endangeredBarDiv" style="height: 71vh;"></div>
+                        <div class="col-md-6" id="endangeredInfoDivDiv" style="height: 71vh;">
+                            <h4 id="endangered-info-title"></h4>
+                            <div class="row">
+                                <div class="col dashboard-item-container">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Species of Concern
+                                        </h6>
+                                        <h5 id="concern-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col dashboard-item-container">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Threatened Species
+                                        </h6>
+                                        <h5 id="threatened-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col dashboard-item-container">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Endangered Species
+                                        </h6>
+                                        <h5 id="endangered-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col dashboard-item-container">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Species in Recovery
+                                        </h6>
+                                        <h5 id="recovery-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="display: flex">
+                                Explore <select id="endangeredSelector" class="form-select align-self-center"
+                                    style="width: auto" onchange="endangeredChange()">
+                                    <option value="Endangered" selected>Endangered Species</option>
+                                    <option value="Threatened">Threatened Species</option>
+                                    <option value="In Recovery">In Recovery Species</option>
+                                </select>
+                                <div class="row">
+                                    <div class="col">
+                                        <ul id="conservation-list" class="list-group">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="section">
@@ -183,6 +242,7 @@
     <script src="js/barChart.js"></script>
     <script src="js/chord.js"></script>
     <script src="js/endangeredBarChart.js"></script>
+    <script src="js/endangeredInfoChart.js"></script>
     <script src="js/spiderChart.js"></script>
     <script src="js/bumpChart.js"></script>
     <script src="js/mapSpecies.js"></script>

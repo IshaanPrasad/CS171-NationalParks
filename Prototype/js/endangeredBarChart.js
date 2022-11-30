@@ -3,10 +3,11 @@
  * * * * * * * * * * * * * */
 
 class EndangeredBarChart {
-  constructor(parentElement, parkData, speciesData) {
+  constructor(parentElement, parkData, speciesData, visitorData) {
     this.parentElement = parentElement;
     this.parkData = parkData;
     this.speciesData = speciesData;
+    this.visitorData = visitorData;
     this.displayData = [];
 
     // helpers
@@ -19,7 +20,7 @@ class EndangeredBarChart {
   initVis() {
     let vis = this;
 
-    vis.margin = { top: 20, right: 20, bottom: 20, left: 40 };
+    vis.margin = { top: 20, right: 20, bottom: 160, left: 120 };
     vis.width =
       document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
     vis.height =
@@ -59,8 +60,18 @@ class EndangeredBarChart {
   wrangleData() {
     let vis = this;
 
+    let topTenParks = [...new Set(vis.visitorData.map((v) => v["Park Name"]))];
+    console.log("top ten", topTenParks);
+
+    let conservationFilter = ["Endangered", "In Recovery", "Species of Concern", "Threatened"];
+
+    let filteredSpeciesData = vis.speciesData.filter(
+      (value) => conservationFilter.includes(value["Conservation Status"]) && topTenParks.includes(value["Park Name"])
+    );
+    console.log(filteredSpeciesData);
+
     vis.parkSpeciesInfo = Array.from(
-      d3.group(vis.speciesData, (d) => d["Park Name"]),
+      d3.group(filteredSpeciesData, (d) => d["Park Name"]),
       ([key, value]) => ({ key, value })
     );
 
@@ -72,13 +83,7 @@ class EndangeredBarChart {
 
     // have a look
 
-    let parksByState = Array.from(
-      d3.group(vis.parkSpeciesInfo, (d) => d.state),
-      ([key, value]) => ({ key, value })
-    );
-
-    let state = parksByState.find((value) => value.key === nameConverter.getAbbreviation(selectedState));
-    vis.displayData = state ? state.value.sort((a, b) => b.species - a.species) : vis.displayData;
+    vis.displayData = vis.parkSpeciesInfo.sort((a, b) => b.species - a.species);
 
     // Update the visualization
     vis.updateVis();
@@ -94,7 +99,16 @@ class EndangeredBarChart {
     vis.y.domain([0, d3.max(vis.displayData, (d) => d.species) * 1.1]);
 
     // draw axes
-    vis.svg.select(".x-axis").call(vis.xAxis);
+    vis.svg
+      .select(".x-axis")
+      .call(vis.xAxis)
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", function (d) {
+        return "rotate(-45)";
+      });
     vis.svg.select(".y-axis").call(vis.yAxis);
 
     // draw bars
@@ -102,10 +116,14 @@ class EndangeredBarChart {
     bars
       .enter()
       .append("rect")
-
+      .on("click", function (e, d) {
+        selectedEndangeredPark = d.name;
+        endangeredInfoChart.wrangleData();
+        vis.updateVis();
+      })
       .merge(bars)
       .transition()
-      .attr("class", "bars")
+      .attr("class", (d) => (d.name === selectedEndangeredPark ? "bars hovered" : "bars"))
       .attr("fill", (d) => "blue")
       .attr("x", (d) => vis.x(d.name))
       .attr("y", (d) => vis.y(d.species))
