@@ -123,7 +123,7 @@ var myFullpage = new fullpage("#fullpage", {
   offsetSections: false,
   resetSliders: false,
   fadingEffect: false,
-  normalScrollElements: "#element1, .element2",
+  normalScrollElements: "#conservation-list",
   scrollOverflow: true,
   scrollOverflowMacStyle: false,
   scrollOverflowReset: false,

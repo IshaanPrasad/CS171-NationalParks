@@ -92,7 +92,7 @@ class EndangeredInfoChart {
         vis.tooltip
           .style("opacity", 1)
           .style("left", e.pageX + 20 + "px")
-          .style("top", e.pageY - 100 + "px")
+          .style("top", e.pageY - 200 + "px")
           .html(
             `
          <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
