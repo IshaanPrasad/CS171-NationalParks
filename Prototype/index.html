@@ -24,193 +24,130 @@
     <div id="fullpage" style="background-color: rgb(200, 219, 190);">
         <div id="title-section" class="section"
             style="background-image: url(img/Great-Smoky-Mountains-National-Park-GettyImages-826749262.jpg); background-size: 100% auto; color: black; width: 100%; height: 100%">
-            <div class="row" style="padding: 16px">
-                <h1 class="title-heading">The Parks at 150</h1>
-            </div>
-            <div class="row" style="background-color: rgb(255, 255, 255, 0.8); padding: 16px">
-                <h2>Celebrating, Exploring, and Supporting the U.S. National Parks</h2>
-                <p> The national parks are home to an enormous amount of biodiversity. Our data consists of 27
-                    states,
-                    56 national parks, 46k+ identified unique species. Amongst these, the following 10 parks have
-                    the
-                    greatest number of visitors annually.</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="row">
-                <h1>Chart 1</h1>
-                <h2>How do the parks rank (annually) by visitation numbers?</h2>
-                <p>Our first goal was to get a better understanding of which parks get the most visitors and explore
-                    different trends for why this may be case. So, this visualization helps us understand which of
-                    the
-                    national parks bring in the most visitors which will allow us to figure out exactly why this may
-                    be
-                    the case. </p>
-                <div id="bumpDiv" style="height: 71vh;"></div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="row">
-                <h1>Chart 2</h1>
-                <h2>Recreational Visitors (in 2021) by Month</h2>
-                <p> After seeing the annual changes in visitation, we wanted to take a more granular look, exploring
-                    just the year of 2021. This allows us to see if different parks attract different numbers of
-                    visitors
-                    depending on the month or season, and will give us more information to come up with newer
-                    questions
-                    that we may have. </p>
-                <div class="row" style="margin-bottom: 6px;">
-                    <div class="col-auto my-auto" style="font-weight: bold;">
-                        Selected Year:
-                    </div>
-                    <select id="yearSelector" class="form-select align-self-center" style="width: auto"
-                        onchange="yearChange()">
-                        <option value="2022">2022</option>
-                        <option value="2021" selected>2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                        <option value="2014">2014</option>
-                        <option value="2013">2013</option>
-                        <option value="2012">2012</option>
-                        <option value="2011">2011</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        <option value="2007">2007</option>
-                        <option value="2006">2006</option>
-                        <option value="2005">2005</option>
-                        <option value="2004">2004</option>
-                        <option value="2003">2003</option>
-                    </select>
+            <div class="container-fluid">
+                <div class="row" style="padding: 16px">
+                    <h1 class="title-heading">The Parks at 150</h1>
                 </div>
-                <div id="heatDiv" style="height: 71vh; background-color: rgb(246, 246, 248)"></div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="row">
-                <h1>Chart 3</h1>
-                <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
-                    is a primary driving force for visitation. To do so, we began by exploring which states tended
-                    to
-                    have the greatest number of species. Hovering over an individual state will give us the number
-                    of
-                    species for each of the parks in the state as well. </p>
-                <h2>Rising Insight:</h2>
-                <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
-                <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
-                <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="row">
-                <h1>Chart 4</h1>
-                <p> We realized after examining the species in the parks, that biodiversity encompasses a range of
-                    different factors and components. As such, we utilized a spider chart to be able to compare
-                    parks
-                    on different dimensions as it relates to biodiversity which could also help us explore different
-                    trends that contribute to visitation. </p>
-                <h2>Main Insight:</h2>
-                <p>U.S. National Parks with larger visitation numbers tend to be the parks with
-                    tremendous biodiversity — given the large number of species within these parks
-                    that are either “Species of Concern” or “Endangered,” these parks offer
-                    tremendous opportunities to educate visitors on the role that humans play
-                    in protecting these diverse ecosystems.</p>
-
-                <p><b>Innovative View</b></p>
-                <!-- Container for spiderChart -->
-                <div class="row justify-content-center" style="height: 600px">
-                    <div class="col-md-6">
-                        <div id="spiderChart" style="height: 100vh;">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Container for checkboxes and update button-->
-                        <div class="container-fluid">
-                            <div class="row justify-content-center" style="height: 50%">
-                                <div id="checkBoxes"></div>
-                            </div>
-                            <div class="row justify-content-center btn-row">
-                                <button id="parksBtn" class="btn btn-light align-self-center" type="button"
-                                    onclick="updateParks()">Enter!</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" style="background-color: rgb(255, 255, 255, 0.8); padding: 16px">
+                    <h2>Celebrating, Exploring, and Supporting the U.S. National Parks</h2>
+                    <p> The national parks are home to an enormous amount of biodiversity. Our data consists of 27
+                        states,
+                        56 national parks, 46k+ identified unique species. Amongst these, the following 10 parks have
+                        the
+                        greatest number of visitors annually.</p>
                 </div>
             </div>
         </div>
         <div class="section">
-            <div class="row">
-                <h1>Chart 5</h1>
-                <p> To further examine the broad category of species, we wanted to take a look to see if the
-                    presence
-                    of certain endangered species may contribute to visitation. So, this visualization allows us
-                    to filter certain parks and the see the number of endangered species that are present. </p>
-                <h2>DRAFT: How many species in the Park(s) are endangered?</h2>
-                <p>TODO: Provide mechanism for filtering parks and endangered status.</p>
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6" id="endangeredBarDiv" style="height: 71vh;"></div>
-                    <div class="col-md-6" id="endangeredInfoDivDiv" style="height: 71vh;">
-                        <h5 id="endangered-info-title"></h5>
-                        <div class="row">
-                            <div class="col dashboard-item-container" style="background-color: rgb(255, 238, 173, 0.6)">
-                                <div class="dashboard-item-flex">
-                                    <h6 class="dashboard-item-label">
-                                        Species of Concern
-                                    </h6>
-                                    <h5 id="concern-value" class="dashboard-item-value">
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="col dashboard-item-container" style="background-color: rgb(255, 173, 96, 0.6)">
-                                <div class="dashboard-item-flex">
-                                    <h6 class="dashboard-item-label">
-                                        Threatened Species
-                                    </h6>
-                                    <h5 id="threatened-value" class="dashboard-item-value">
-                                    </h5>
-                                </div>
+                    <h1>Chart 1</h1>
+                    <h2>How do the parks rank (annually) by visitation numbers?</h2>
+                    <p>Our first goal was to get a better understanding of which parks get the most visitors and explore
+                        different trends for why this may be case. So, this visualization helps us understand which of
+                        the
+                        national parks bring in the most visitors which will allow us to figure out exactly why this may
+                        be
+                        the case. </p>
+                    <div id="bumpDiv" style="height: 71vh;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Chart 2</h1>
+                    <h2>Recreational Visitors (in 2021) by Month</h2>
+                    <p> After seeing the annual changes in visitation, we wanted to take a more granular look, exploring
+                        just the year of 2021. This allows us to see if different parks attract different numbers of
+                        visitors
+                        depending on the month or season, and will give us more information to come up with newer
+                        questions
+                        that we may have. </p>
+                    <div class="row" style="margin-bottom: 6px;">
+                        <div class="col-auto my-auto" style="font-weight: bold;">
+                            Selected Year:
+                        </div>
+                        <select id="yearSelector" class="form-select align-self-center" style="width: auto"
+                            onchange="yearChange()">
+                            <option value="2022">2022</option>
+                            <option value="2021" selected>2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                        </select>
+                    </div>
+                    <div id="heatDiv" style="height: 71vh; background-color: rgb(246, 246, 248)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Chart 3</h1>
+                    <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
+                        is a primary driving force for visitation. To do so, we began by exploring which states tended
+                        to
+                        have the greatest number of species. Hovering over an individual state will give us the number
+                        of
+                        species for each of the parks in the state as well. </p>
+                    <h2>Rising Insight:</h2>
+                    <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
+                    <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
+                    <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Chart 4</h1>
+                    <p> We realized after examining the species in the parks, that biodiversity encompasses a range
+                        of
+                        different factors and components. As such, we utilized a spider chart to be able to compare
+                        parks
+                        on different dimensions as it relates to biodiversity which could also help us explore
+                        different
+                        trends that contribute to visitation. </p>
+                    <h2>Main Insight:</h2>
+                    <p>U.S. National Parks with larger visitation numbers tend to be the parks with
+                        tremendous biodiversity — given the large number of species within these parks
+                        that are either “Species of Concern” or “Endangered,” these parks offer
+                        tremendous opportunities to educate visitors on the role that humans play
+                        in protecting these diverse ecosystems.</p>
+
+                    <p><b>Innovative View</b></p>
+                    <!-- Container for spiderChart -->
+                    <div class="row justify-content-center" style="height: 600px">
+                        <div class="col-md-6">
+                            <div id="spiderChart" style="height: 100vh;">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col dashboard-item-container" style="background-color: rgb(217, 83, 79, 0.6)">
-                                <div class="dashboard-item-flex">
-                                    <h6 class="dashboard-item-label">
-                                        Endangered Species
-                                    </h6>
-                                    <h5 id="endangered-value" class="dashboard-item-value">
-                                    </h5>
+                        <div class="col-md-6">
+                            <!-- Container for checkboxes and update button-->
+                            <div class="container-fluid">
+                                <div class="row justify-content-center" style="height: 50%">
+                                    <div id="checkBoxes"></div>
                                 </div>
-                            </div>
-                            <div class="col dashboard-item-container" style="background-color: rgb(150, 206, 180, 0.6)">
-                                <div class="dashboard-item-flex">
-                                    <h6 class="dashboard-item-label">
-                                        Species in Recovery
-                                    </h6>
-                                    <h5 id="recovery-value" class="dashboard-item-value">
-                                    </h5>
+                                <div class="row justify-content-center btn-row">
+                                    <button id="parksBtn" class="btn btn-light align-self-center" type="button"
+                                        onclick="updateParks()">Enter!</button>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top: 6px; margin-bottom: 6px;">
-                            <div class="col-auto my-auto" style="font-weight: bold;">
-                                Explore
-                            </div>
-                            <select id="endangeredSelector" class="form-select align-self-center" style="width: auto"
-                                onchange="endangeredChange()">
-                                <option value="Endangered" selected>Endangered Species</option>
-                                <option value="Threatened">Threatened Species</option>
-                                <option value="In Recovery">In Recovery Species</option>
-                            </select>
-                            <div class="col-auto my-auto">(Hover over a species below for more info!)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <ul id="conservation-list" class="list-group">
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -218,36 +155,124 @@
             </div>
         </div>
         <div class="section">
-            <div class="row">
-                <h1>Chart 6</h1>
-                <p> We wanted to take a look at exactly which parks had which endangered species so we could better
-                    understand exactly which parks have more endangered species.</p>
-                <h2>Which endangered species are associated with each park?</h2>
-                <div class="container">
-                    <div id="mapSpecies" style="height: 60vh;"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Chart 5</h1>
+                    <p> To further examine the broad category of species, we wanted to take a look to see if the
+                        presence
+                        of certain endangered species may contribute to visitation. So, this visualization allows us
+                        to filter certain parks and the see the number of endangered species that are present. </p>
+                    <h2>DRAFT: How many species in the Park(s) are endangered?</h2>
+                    <p>TODO: Provide mechanism for filtering parks and endangered status.</p>
+                    <div class="row">
+                        <div class="col-md-6" id="endangeredBarDiv" style="height: 71vh;"></div>
+                        <div class="col-md-6" id="endangeredInfoDivDiv" style="height: 71vh;">
+                            <h5 id="endangered-info-title"></h5>
+                            <div class="row">
+                                <div class="col dashboard-item-container"
+                                    style="background-color: rgb(255, 238, 173, 0.6)">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Species of Concern
+                                        </h6>
+                                        <h5 id="concern-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col dashboard-item-container"
+                                    style="background-color: rgb(255, 173, 96, 0.6)">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Threatened Species
+                                        </h6>
+                                        <h5 id="threatened-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col dashboard-item-container"
+                                    style="background-color: rgb(217, 83, 79, 0.6)">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Endangered Species
+                                        </h6>
+                                        <h5 id="endangered-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="col dashboard-item-container"
+                                    style="background-color: rgb(150, 206, 180, 0.6)">
+                                    <div class="dashboard-item-flex">
+                                        <h6 class="dashboard-item-label">
+                                            Species in Recovery
+                                        </h6>
+                                        <h5 id="recovery-value" class="dashboard-item-value">
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 6px; margin-bottom: 6px;">
+                                <div class="col-auto my-auto" style="font-weight: bold;">
+                                    Explore
+                                </div>
+                                <select id="endangeredSelector" class="form-select align-self-center"
+                                    style="width: auto" onchange="endangeredChange()">
+                                    <option value="Endangered" selected>Endangered Species</option>
+                                    <option value="Threatened">Threatened Species</option>
+                                    <option value="In Recovery">In Recovery Species</option>
+                                </select>
+                                <div class="col-auto my-auto">(Hover over a species below for more info!)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <ul id="conservation-list" class="list-group">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="section">
-            <div class="row">
-                <h1>Solution</h1>
-                <p>From this exploration, it is clear that visitation is impacted by the biodiversity of
-                    tha national parks. Therefore, in addition to the ethical implications of maintaining
-                    biodiversity, there is also a practical reason since biodiversity helps drive
-                    traffic to the parks and contributes to ecotourism in many states.
-                    To maintain the great biodiversity of the national parks and the world,
-                    we hope our insights on the national parks can provide a way for people
-                    to appreciate our ecosystems and steer efforts towards protecting our
-                    biodiversity.</p>
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Chart 6</h1>
+                    <p> We wanted to take a look at exactly which parks had which endangered species so we could
+                        better
+                        understand exactly which parks have more endangered species.</p>
+                    <h2>Which endangered species are associated with each park?</h2>
+                    <div class="container">
+                        <div id="mapSpecies" style="height: 60vh;"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section">
-            <div class="row">
-                <h1>Sources</h1>
-                <div>
-                    gGetty images (title slide)
-                    Google images (species)
-                    nps.gov (data)
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Solution</h1>
+                    <p>From this exploration, it is clear that visitation is impacted by the biodiversity of
+                        tha national parks. Therefore, in addition to the ethical implications of maintaining
+                        biodiversity, there is also a practical reason since biodiversity helps drive
+                        traffic to the parks and contributes to ecotourism in many states.
+                        To maintain the great biodiversity of the national parks and the world,
+                        we hope our insights on the national parks can provide a way for people
+                        to appreciate our ecosystems and steer efforts towards protecting our
+                        biodiversity.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Sources</h1>
+                    <div>
+                        gGetty images (title slide)
+                        Google images (species)
+                        nps.gov (data)
+                    </div>
                 </div>
             </div>
         </div>
