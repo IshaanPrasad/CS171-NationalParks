@@ -71,8 +71,10 @@ class MapVis {
         if (vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]) {
           content += `
           <h4>Number of parks: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.parks}<h3>
-          <h4>Total acres: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.acres}<h3>
-          <h4>Total species: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.species}<h3>`;
+          <h4>Total acres: ${d3.format(",")(vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.acres)}<h3>
+          <h4>Total species: ${d3.format(",")(
+            vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.species
+          )}<h3>`;
         } else {
           content += ` <h4>No parks!</h4>`;
         }
