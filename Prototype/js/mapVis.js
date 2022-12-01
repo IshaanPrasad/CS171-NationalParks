@@ -112,9 +112,11 @@ class MapVis {
         barChart.wrangleData();
       })
       .on("click", function (event, d) {
-        selectedState = d.properties.name;
-        mapVis.updateVis();
-        barChart.wrangleData();
+        if (vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]) {
+          selectedState = d.properties.name;
+          mapVis.updateVis();
+          barChart.wrangleData();
+        }
       });
 
     // append tooltip

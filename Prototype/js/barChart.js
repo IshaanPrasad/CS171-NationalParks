@@ -88,7 +88,6 @@ class BarChart {
     let vis = this;
 
     vis.svg.select(".bar-title").select("text").text(`Species per park in ${selectedState}`);
-
     // set scale domains
     vis.x.domain(vis.displayData.map((value) => value.name));
     vis.y.domain([0, d3.max(vis.displayData, (d) => d.species) * 1.1]);
