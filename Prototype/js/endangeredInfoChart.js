@@ -97,7 +97,7 @@ class EndangeredInfoChart {
           .style("top", e.pageY - 280 + "px")
           .html(
             `
-         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
+         <div style="border: thin solid lightgrey; border-radius: 4px; background: rgb(249, 249, 246); padding: 16px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;">
          <h3>${d["Common Names"].split(",")[0]}</h3>
          <h4>Category: ${d["Category"]}</h4>
          <h4>Scientific Name: ${d["Scientific Name"]}</h4>

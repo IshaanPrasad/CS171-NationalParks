@@ -67,22 +67,29 @@ class MapVis {
       .attr("class", "state")
       .attr("d", vis.path)
       .on("mouseover", function (event, d) {
+        let content = `<h3>${d.properties.name}<h3>`;
+        if (vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]) {
+          content += `
+          <h4>Number of parks: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.parks}<h3>
+          <h4>Total acres: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.acres}<h3>
+          <h4>Total species: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.species}<h3>`;
+        } else {
+          content += ` <h4>No parks!</h4>`;
+        }
+
         vis.tooltip
           .style("opacity", 1)
           .style("left", event.pageX + 20 + "px")
           .style("top", event.pageY + "px")
           .html(
             `
-         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
-             <h3>${d.properties.name}<h3>
-             <h4>Total species: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.species}<h3>
-             <h4>Number of parks: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.parks}<h3>
-             <h4>Total acres: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.acres}<h3>
+            <div style="border: thin solid lightgrey; border-radius: 4px; background: rgb(249, 249, 246); padding: 16px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;">
+             ${content}
          </div>`
           );
 
         // update selected state on hover and trigger updates for other charts (linked hover)
-        selectedState = d.properties.name;
+        // selectedState = d.properties.name;
         mapVis.updateVis();
         barChart.wrangleData();
       })
@@ -99,6 +106,11 @@ class MapVis {
         vis.tooltip.style("opacity", 0).style("left", 0).style("top", 0).html(``);
 
         // update selected state on hover out and trigger updates for other charts
+        mapVis.updateVis();
+        barChart.wrangleData();
+      })
+      .on("click", function (event, d) {
+        selectedState = d.properties.name;
         mapVis.updateVis();
         barChart.wrangleData();
       });
