@@ -34,11 +34,11 @@ class HeatChart {
       .attr("transform", `translate (${vis.margin.left}, ${vis.margin.top})`);
 
     // add title
-    vis.svg
+    vis.title = vis.svg
       .append("g")
       .attr("class", "title bar-title")
       .append("text")
-      .text("Visitation at the most popular parks in 2021")
+      .text(`Visitation at the most popular parks in ${selectedHeatYear}`)
       .attr("transform", `translate(${vis.width / 4}, -60)`)
       .attr("text-anchor", "middle");
 
@@ -130,10 +130,10 @@ class HeatChart {
     let vis = this;
 
     vis.displayData = [];
-    let data2021 = vis.data.filter((value) => value.Year === "2021");
-    data2021.sort((a, b) => +b.Total.split(",").join("") - +a.Total.split(",").join(""));
-    // console.log(data2021);
-    data2021.forEach((value) => {
+    let dataYear = vis.data.filter((value) => value.Year === selectedHeatYear);
+    dataYear.sort((a, b) => +b.Total.split(",").join("") - +a.Total.split(",").join(""));
+    // console.log(dataYear);
+    dataYear.forEach((value) => {
       this.displayData.push({ park: value["Park Name"], month: "January", visitors: +value.JAN.split(",").join("") });
       this.displayData.push({ park: value["Park Name"], month: "February", visitors: +value.FEB.split(",").join("") });
       this.displayData.push({ park: value["Park Name"], month: "March", visitors: +value.MAR.split(",").join("") });
@@ -154,6 +154,8 @@ class HeatChart {
 
   updateVis() {
     let vis = this;
+
+    vis.title.text(`Visitation at the most popular parks in ${selectedHeatYear}`);
 
     // set scale domains
     vis.y.domain(

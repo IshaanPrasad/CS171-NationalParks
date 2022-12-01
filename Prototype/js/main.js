@@ -83,6 +83,14 @@ function updateParks() {
 }
 
 // Used for endangered charts
+let selectedHeatYear = document.getElementById("yearSelector").value;
+
+function yearChange() {
+  selectedHeatYear = document.getElementById("yearSelector").value;
+  heatChart.wrangleData();
+}
+
+// Used for endangered charts
 let selectedEndangered = document.getElementById("endangeredSelector").value;
 
 function endangeredChange() {
