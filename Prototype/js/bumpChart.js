@@ -70,7 +70,7 @@ class BumpChart {
     dataByYear.sort((a, b) => +a[0] - +b[0]);
     // Take last 20 years
     dataByYear = dataByYear.slice(-20);
-    console.log(dataByYear);
+    // console.log(dataByYear);
     dataByYear.forEach((_, index) => {
       dataByYear[index][1].sort((a, b) => Number(b.Total.split(",").join("")) - Number(a.Total.split(",").join("")));
 

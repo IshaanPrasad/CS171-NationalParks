@@ -132,7 +132,7 @@ class HeatChart {
     vis.displayData = [];
     let data2021 = vis.data.filter((value) => value.Year === "2021");
     data2021.sort((a, b) => +b.Total.split(",").join("") - +a.Total.split(",").join(""));
-    console.log(data2021);
+    // console.log(data2021);
     data2021.forEach((value) => {
       this.displayData.push({ park: value["Park Name"], month: "January", visitors: +value.JAN.split(",").join("") });
       this.displayData.push({ park: value["Park Name"], month: "February", visitors: +value.FEB.split(",").join("") });

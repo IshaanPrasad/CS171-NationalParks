@@ -72,7 +72,7 @@ function initMainPage(allDataArray) {
     [0, 0, 0, 332],
   ];
 
-  chordChart = new Chord("chord", matrix);
+  // chordChart = new Chord("chord", matrix);
 }
 
 // Used for SpiderChart
@@ -139,7 +139,7 @@ var myFullpage = new fullpage("#fullpage", {
   controlArrows: true,
   controlArrowsHTML: ['<div class="fp-arrow"></div>', '<div class="fp-arrow"></div>'],
   verticalCentered: true,
-  sectionsColor: ["#C8DBBE", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#C8DBBE"],
+  sectionsColor: [], //["#C8DBBE", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#C8DBBE"],
   // paddingTop: "3em",
   paddingBottom: "10px",
   fixedElements: "#header, .footer",

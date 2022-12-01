@@ -33,12 +33,24 @@
 
 body {
     background-color: #EDE4E0;
-    font-family: "DM Sans"
+    background-color: rgb(253, 253, 248);
+    color: white;
+    color: black;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: normal;
+}
+
+.title-heading {
+    font-weight: 700;
+    font-size: 72px;
+    font-style: normal;
+    color: black;
 }
 
 .section {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
 
 .title {

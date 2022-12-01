@@ -61,14 +61,14 @@ class EndangeredBarChart {
     let vis = this;
 
     let topTenParks = [...new Set(vis.visitorData.map((v) => v["Park Name"]))];
-    console.log("top ten", topTenParks);
+    // console.log("top ten", topTenParks);
 
     let conservationFilter = ["Endangered", "In Recovery", "Species of Concern", "Threatened"];
 
     let filteredSpeciesData = vis.speciesData.filter(
       (value) => conservationFilter.includes(value["Conservation Status"]) && topTenParks.includes(value["Park Name"])
     );
-    console.log(filteredSpeciesData);
+    // console.log(filteredSpeciesData);
 
     vis.parkSpeciesInfo = Array.from(
       d3.group(filteredSpeciesData, (d) => d["Park Name"]),

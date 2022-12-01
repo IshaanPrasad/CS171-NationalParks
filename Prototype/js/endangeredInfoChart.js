@@ -36,14 +36,14 @@ class EndangeredInfoChart {
       (value) =>
         conservationFilter.includes(value["Conservation Status"]) && value["Park Name"] == selectedEndangeredPark
     );
-    console.log(filteredSpeciesData);
+    // console.log(filteredSpeciesData);
 
     vis.parkSpeciesInfo = Array.from(
       d3.group(filteredSpeciesData, (d) => d["Conservation Status"]),
       ([key, value]) => ({ key, value })
     );
 
-    console.log(vis.parkSpeciesInfo);
+    // console.log(vis.parkSpeciesInfo);
 
     vis.displayData = vis.parkSpeciesInfo.map((element) => ({
       name: element.key,
@@ -58,7 +58,7 @@ class EndangeredInfoChart {
       ? vis.parkSpeciesInfo.find((v) => v.key === selectedEndangered).value
       : [];
 
-    console.log(vis.listData);
+    // console.log(vis.listData);
 
     // Update the visualization
     vis.updateVis();
@@ -67,7 +67,9 @@ class EndangeredInfoChart {
   updateVis() {
     let vis = this;
 
-    d3.select("#endangered-info-title").text("Conservation Status in " + selectedEndangeredPark);
+    d3.select("#endangered-info-title").html(
+      "Conservation Status in " + "<b style='color: rgb(50, 130, 184);'>" + selectedEndangeredPark + "</b>"
+    );
 
     d3.select("#concern-value").text(vis.displayData.find((v) => v.name == "Species of Concern")?.species || 0);
 
@@ -92,7 +94,7 @@ class EndangeredInfoChart {
         vis.tooltip
           .style("opacity", 1)
           .style("left", e.pageX + 20 + "px")
-          .style("top", e.pageY - 200 + "px")
+          .style("top", e.pageY - 280 + "px")
           .html(
             `
          <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
