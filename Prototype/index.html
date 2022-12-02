@@ -23,7 +23,7 @@
     <!-- FULLPAGE -->
     <div id="fullpage" style="background-color: rgb(200, 219, 190);">
         <div id="title-section" class="section"
-            style="background-image: url(img/Great-Smoky-Mountains-National-Park-GettyImages-826749262.jpg); background-size: cover; background-repeat: no-repeat; color: black; width: 100%; height: 100%">
+            style="background-image: url(img/Great-Smoky-Mountains-National-Park-GettyImages-826749262.jpg); background-size: cover; background-repeat: no-repeat; color: rgb(0,0,0,0.8); width: 100%; height: 100%">
             <div class="container-fluid">
                 <div class="row" style="padding: 16px; margin-bottom: 40vh;">
                     <h1 class="title-heading">The Parks at 150</h1>
@@ -96,6 +96,23 @@
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
+                    <h1>Chart 3</h1>
+                    <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
+                        is a primary driving force for visitation. To do so, we began by exploring which states tended
+                        to
+                        have the greatest number of species. Hovering over an individual state will give us the number
+                        of
+                        species for each of the parks in the state as well. </p>
+                    <h2>Rising Insight:</h2>
+                    <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
+                    <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
+                    <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
                     <h1>Chart 1</h1>
                     <h2>How do the parks rank (annually) by visitation numbers?</h2>
                     <p>Our first goal was to get a better understanding of which parks get the most visitors and explore
@@ -148,23 +165,6 @@
                         </select>
                     </div>
                     <div id="heatDiv" style="height: 71vh; background-color: rgb(246, 246, 248)"></div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container-fluid">
-                <div class="row">
-                    <h1>Chart 3</h1>
-                    <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
-                        is a primary driving force for visitation. To do so, we began by exploring which states tended
-                        to
-                        have the greatest number of species. Hovering over an individual state will give us the number
-                        of
-                        species for each of the parks in the state as well. </p>
-                    <h2>Rising Insight:</h2>
-                    <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
-                    <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
-                    <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
                 </div>
             </div>
         </div>
