@@ -69,6 +69,7 @@ class MapVis {
       .on("mouseover", function (event, d) {
         let content = `<h3>${d.properties.name}<h3>`;
         if (vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]) {
+          d3.select(this).style("cursor", "pointer");
           content += `
           <h4>Number of parks: ${vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.parks}<h3>
           <h4>Total acres: ${d3.format(",")(vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.acres)}<h3>
@@ -76,6 +77,7 @@ class MapVis {
             vis.stateInfo[nameConverter.getAbbreviation(d.properties.name)]?.species
           )}<h3>`;
         } else {
+          d3.select(this).style("cursor", "normal");
           content += ` <h4>No parks!</h4>`;
         }
 
@@ -217,10 +219,7 @@ class MapVis {
     let vis = this;
 
     // update scale domains
-    vis.x.domain([
-      d3.min(Object.values(vis.stateInfo), (v) => v.species),
-      d3.max(Object.values(vis.stateInfo), (v) => v.species),
-    ]);
+    vis.x.domain([0, d3.max(Object.values(vis.stateInfo), (v) => v.species)]);
     vis.legendScale.domain(vis.x.domain());
 
     // change tick value formatting depending on selected category
@@ -244,7 +243,7 @@ class MapVis {
         if (vis.stateInfo[abbrev]) {
           return vis.x(vis.stateInfo[abbrev].species);
         } else {
-          return "white";
+          return "rgb(217, 83, 79, 0.2)";
         }
       });
   }

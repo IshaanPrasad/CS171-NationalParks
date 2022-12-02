@@ -116,6 +116,9 @@ class EndangeredBarChart {
     bars
       .enter()
       .append("rect")
+      .on("mouseover", function (e, d) {
+        d3.select(this).style("cursor", "pointer");
+      })
       .on("click", function (e, d) {
         selectedEndangeredPark = d.name;
         endangeredInfoChart.wrangleData();

@@ -88,3 +88,7 @@ body {
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+.list-active {
+    background-color: lightgrey;
+}

@@ -86,11 +86,10 @@ class EndangeredInfoChart {
       .attr("class", "list-group-item")
       .merge(list)
       .text((v) => v["Common Names"].split(",")[0])
-      .on("click", function (e, d) {
-        d3.select("#conservation-list").selectAll("li").attr("class", "list-group-item");
-        d3.select(this).attr("class", "list-group-item active");
-      })
+      .on("click", function (e, d) {})
       .on("mouseover", function (e, d) {
+        d3.select("#conservation-list").selectAll("li").attr("class", "list-group-item");
+        d3.select(this).attr("class", "list-group-item list-active");
         vis.tooltip
           .style("opacity", 1)
           .style("left", e.pageX + 20 + "px")
