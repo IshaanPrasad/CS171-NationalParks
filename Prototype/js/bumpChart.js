@@ -20,7 +20,7 @@ class BumpChart {
   initVis() {
     let vis = this;
 
-    vis.margin = { top: 80, right: 320, bottom: 20, left: 40 };
+    vis.margin = { top: 80, right: 220, bottom: 20, left: 40 };
     vis.width =
       document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
     vis.height =
@@ -191,7 +191,7 @@ class BumpChart {
       .attr("alignment-baseline", "middle")
       .attr("x", vis.width)
       .attr("y", (d) => vis.y(d.rankings[d.rankings.length - 1].rank))
-      .text((d) => "- " + d.park);
+      .text((d) => "- " + d.park.replace(" National Park", ""));
     labels.exit().remove();
 
     // draw axes
