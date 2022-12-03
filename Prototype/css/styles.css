@@ -91,3 +91,7 @@ body {
 .list-active {
     background-color: lightgrey;
 }
+
+p {
+    text-align:justify;
+}

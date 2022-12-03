@@ -29,48 +29,68 @@
                     <h1 class="title-heading">The Parks at 150</h1>
                     <h2 style="font-weight: bold">Celebrating, Exploring, & Supporting Biodiversity within the U.S. National Parks</h2>
                 </div>
-                <!-- <div class="row" style="background-color: rgb(255, 255, 255, 0.8); padding: 16px">
-                    <h2>Celebrating, Exploring, and Supporting the U.S. National Parks</h2>
-                    <p> The national parks are home to an enormous amount of biodiversity. Our data consists of 27
-                        states,
-                        56 national parks, 46k+ identified unique species. Amongst these, the following 10 parks have
-                        the
-                        greatest number of visitors annually.</p>
-                </div> -->
             </div>
         </div>
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
-                        <h1>Biodiversity & the Parks</h1>
+                        <h1><b>About this Data Story</b></h1>
+                        <h4><i>Raising Awareness for Threatened and Endangered Species within the Parks</i></h4>
                         <p> Throughout the world, industrial development, habitat loss, and changing climate patterns due to human activities threaten the existence of much of the planet’s biodiversity.
-
-                            In the United States, the National Park System has provided a case study in the successful management of critical habitats for the protection of endangered and threatened species…
-                            understand exactly which parks have more endangered species...</p>
+                                <br /><br />
+                            In the United States, the National Park System provides a case study in protecting and preserving the critical habitats of endangered and threatened species.
+                                <br /><br />
+                            As frequent visitors to our Nation’s Parks, our team grew interested in better understanding the threatened and endangered species that the parks are protecting.
+                                <br /><br />
+                            Consequently, we developed this Data Story to shine a light on the species present within the nation’s most visited parks and to highlight opportunities for viewers to take action. As the Parks celebrate their 150th anniversary, we hope to support and celebrate the biodiversity within them for generations to come.</p>
                     </div>
                     <div class="col-md-8">
-                        <h1>The Parks Across the U.S.</h1>
-                        <p> We wanted to take a look at exactly which parks had which endangered species so we could
-                            better
-                            understand exactly which parks have more endangered species.</p>
-                        <h2>TBD Title</h2>
+                        <h1><i>The Parks Across the U.S.</i></h1>
+                        <div class="px-2">
+                            <p> Our dataset consists of the 56 National Parks established across 27 states, containing 46k+ identified unique species.</p>
+
+                            <div class="alert alert-success" role="alert">
+                            To learn more about the nation's 56 Parks, select a pinned location on the map.
+                            </div>
+                        </div>
                         <div class="container">
                             <div id="mapSpecies" style="height: 60vh;"></div>
                         </div>
                     </div>
-
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row mt-1">
+                    <h1><b>Exploring Biodiversity within the Parks</b></h1>
+                    <div class="col-md-6">
+                        <p> Having probed the nation's 56 parks broadly, we next want to investigate [i] the distribution of parks across states & [ii] the number of species present within each park.</p>
+                        <p><b><i>Insight:</i></b> There is tremendous biodiversity present within each park. Furthermore, nearly every park has 1000+ species present within them!</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-success" role="alert">
+                            Hover over a state to learn more about a state's number of National Parks, total park acreage, and number of species. Click on a state to view the number of species within each of the state's National Parks (if applicable).
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
+                    <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
                 </div>
             </div>
         </div>
         <div class="section">
             <div class="container-fluid">
                 <h1>A Snapshot of the Nation's Most Visited Parks</h1>
-                <p> The national parks are home to an enormous amount of biodiversity. Our data consists of 27
-                    states,
-                    56 national parks, 46k+ identified unique species. Amongst these, the following 10 parks have
-                    the
-                    greatest number of visitors annually.</p>
+                <p> From our exploration thus far, it's clear that the U.S. National Parks are rife with biodiversity. To provide
+                    greater focus on regions with the most potential for positive impact through increased awareness,
+                    we decided to focus our exploration on the Top 10 most visited parks. The following 10 parks had the
+                    greatest number of visitors in 2021.</p>
+                <div class="col-md-6">
+                    <div class="alert alert-success" role="alert">
+                        Hover over a park to view the number of individuals who visited the location in 2021.
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col"><img
                             src="park-images/Great-Smoky-Mountains-National-Park-GettyImages-826749262.jpg"
@@ -120,31 +140,21 @@
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
-                    <h1>Chart 3</h1>
-                    <p> After exploring the visitation data, we wanted to see if the extent of biodiversity in the parks
-                        is a primary driving force for visitation. To do so, we began by exploring which states tended
-                        to
-                        have the greatest number of species. Hovering over an individual state will give us the number
-                        of
-                        species for each of the parks in the state as well. </p>
-                    <h2>Rising Insight:</h2>
-                    <p>Biodiversity is heavily concentrated in a few states (e.g., CA)</p>
-                    <div class="col-md-6" id="mapDiv" style="height: 71vh;"></div>
-                    <div class="col-md-6" id="barDiv" style="height: 71vh;"></div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container-fluid">
-                <div class="row">
-                    <h1>Chart 1</h1>
-                    <h2>How do the parks rank (annually) by visitation numbers?</h2>
-                    <p>Our first goal was to get a better understanding of which parks get the most visitors and explore
-                        different trends for why this may be case. So, this visualization helps us understand which of
-                        the
-                        national parks bring in the most visitors which will allow us to figure out exactly why this may
-                        be
-                        the case. </p>
+                    <h1><b>Understanding Visitation Numbers Over 20 Years</b></h1>
+                    <h4><i>How do the parks rank (annually) by visitation numbers?</i></h4>
+                    <p> To continue our exploration of 2021's most visited National Parks, we investigated how popularity
+                        (i.e., visitatino numbers) between the parks changed over the past 20 years.</p>
+                    <p><b><i>Insight:</i></b> Whereas the nine other parks have traded rankings over the past twenty years,
+                        Great Smoky Mountains National Parks has consistently ranked as the number one most visited park
+                        over this time. Upon further inquiry, we learned that Great Smoky Mountains is the only National Park
+                        that does <i>not</i> charge an entrance fee. Thus, visitors are attracted by the accessibility of this
+                        free park!</p>
+                    <div class="col-md-8">
+                        <div class="alert alert-success" role="alert">
+                            Hover over a park's trend line to view a highlighted timeline of the park's visitation ranking over
+                            the past 20 years.
+                        </div>
+                    </div>
                     <div id="bumpDiv" style="height: 71vh;"></div>
                 </div>
             </div>
