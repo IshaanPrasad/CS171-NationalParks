@@ -20,7 +20,7 @@ class BumpChart {
   initVis() {
     let vis = this;
 
-    vis.margin = { top: 80, right: 220, bottom: 20, left: 40 };
+    vis.margin = { top: 60, right: 220, bottom: 20, left: 40 };
     vis.width =
       document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
     vis.height =
