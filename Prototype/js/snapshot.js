@@ -62,7 +62,6 @@ class SnapshotVis {
     let vis = this;
     vis.cols.forEach((v, i) => {
       v.on("mouseover", function (event, d) {
-        console.log(vis.data);
         vis.tooltip
           .style("opacity", 1)
           .style("left", event.pageX + 20 + "px")
@@ -70,7 +69,7 @@ class SnapshotVis {
           .html(
             `
             <div style="border: thin solid lightgrey; border-radius: 4px; background: rgb(249, 249, 246); padding: 12px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;">
-         ${vis.data.find((d) => d["Park Name"] === vis.parks[i] + " National Park").Total} visitors
+         ${vis.data.find((d) => d["Park Name"] === vis.parks[i] + " National Park").Total} visitors in 2021
          </div>`
           );
       }).on("mouseout", function (event, d) {
