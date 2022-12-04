@@ -179,6 +179,8 @@ class SpiderChart {
             .merge(paths)
             .attr("class", "paths")
             .datum(d => getPathCoordinates(d))
+            .transition()
+            .duration(1000)
             .attr("d", line)
             .attr("fill", d => {
                 let color =  colorScale(d)
