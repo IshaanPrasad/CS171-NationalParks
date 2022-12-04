@@ -30,6 +30,10 @@
     stroke: #9F8772;
     fill: #E6BA95;
 }
+.map-hovered {
+    stroke-width: 6px; 
+    stroke: rgb(50, 130, 184);
+}
 
 body {
     background-color: #EDE4E0;
