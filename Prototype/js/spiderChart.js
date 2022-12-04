@@ -21,13 +21,13 @@ class SpiderChart {
         vis.features = ["Species_ID_nunique","Species_ID_Endangered","Species_ID_Native","Species_ID_Rare","Acres"];
         vis.feature_names = ["# Species", "Endangered", "Nativeness", "Rare Species", "Size"]
 
-        vis.margin = { top: 200, right: 200, bottom: 40, left: 200 };
+        vis.margin = { top: 40, right: 200, bottom: 40, left: 200 };
         vis.width =
             document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         vis.height =
             document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
-        vis.rad = vis.width/1.5
+        vis.rad = vis.width/1.7
 
         // init drawing area
         vis.svg = d3
@@ -94,7 +94,7 @@ class SpiderChart {
         // Adding legend
         vis.legend = vis.svg.append("g")
             .attr("class", "legend")
-            .attr("transform", "translate(" + vis.width/2 + "," + (vis.height - vis.height/4) + ")");
+            .attr("transform", "translate(" + -180 + "," + 0 + ")");
 
         vis.wrangleData()
     }
@@ -102,7 +102,13 @@ class SpiderChart {
     wrangleData() {
         let vis = this
 
-        vis.displayData = vis.data.filter(d => document.getElementById(d["Park Code"]).checked);
+        let selectedParks = [document.getElementById("parksSelect1").value,
+            document.getElementById("parksSelect2").value,
+            document.getElementById("parksSelect3").value]
+
+        console.log(selectedParks)
+
+        vis.displayData = vis.data.filter(d => selectedParks.includes(d["Park Code"]));
 
         // console.log("DSIPLAY DATA")
         // console.log(vis.displayData)
@@ -148,7 +154,7 @@ class SpiderChart {
         let line = d3.line()
             .x(d => d.x)
             .y(d => d.y);
-        let colorScale = d3.scaleOrdinal(d3.schemeTableau10).domain(vis.displayData)
+        let colorScale = d3.scaleOrdinal(d3.schemeSet3).domain(vis.displayData)
 
         function getPathCoordinates(data_point){
             let coordinates = [];

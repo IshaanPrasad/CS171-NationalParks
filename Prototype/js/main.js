@@ -46,16 +46,8 @@ function initMainPage(allDataArray) {
 
   heatChart = new HeatChart("heatDiv", allDataArray[4]);
 
-  // Chart 5 (Spider Chart)
-  let spiderChartData = allDataArray[3];
-  let checkBoxHTML = "";
-  spiderChartData.forEach((d) => {
-    checkBoxHTML += `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="${d["Park Code"]}" name="${d["Park Name"]}" value="${d["Park Name"]}">
-            <label class="form-check-label" htmlFor="${d["Park Code"]}">${d["Park Name"]}</label></div>`;
-  });
-  document.getElementById("checkBoxes").innerHTML = checkBoxHTML;
-
-  spiderChart = new SpiderChart("spiderChart", spiderChartData);
+  // // Chart 5 (Spider Chart)
+  spiderChart = new SpiderChart("spiderChart", allDataArray[3]);
 
   // Chart 6 - Endangered Species
   endangeredBarChart = new EndangeredBarChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);

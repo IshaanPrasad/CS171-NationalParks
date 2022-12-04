@@ -228,22 +228,63 @@
 
                     <p><b>Innovative View</b></p>
                     <!-- Container for spiderChart -->
-                    <div class="row justify-content-center" style="height: 600px">
-                        <div class="col-md-6">
+                    <div class="row" style="height: 600px">
+                        <div class="alert alert-success" style="width: 50%" role="alert">
+                            Select parks to compare across different dimensions.
+                        </div>
+                        <div class="col-md-8">
                             <div id="spiderChart" style="height: 100vh;">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <!-- Container for checkboxes and update button-->
-                            <div class="container-fluid">
-                                <div class="row justify-content-center" style="height: 50%">
-                                    <div id="checkBoxes"></div>
-                                </div>
-                                <div class="row justify-content-center btn-row">
-                                    <button id="parksBtn" class="btn btn-light align-self-center" type="button"
-                                        onclick="updateParks()">Enter!</button>
-                                </div>
+                        <div class="col-md-4">
+                            <div class="col-auto parkSelect" style="font-weight: bold;">
+                                Park 1:
                             </div>
+                            <select id="parksSelect1" class="form-select"
+                                    style="width: 70%" onchange="updateParks()">
+                                <option value="ACAD" selected>Acadia</option>
+                                <option value="GLAC">Glacier</option>
+                                <option value="GRCA">Grand Canyon</option>
+                                <option value="GRSM">Great Smoky Mountains</option>
+                                <option value="GRTE">Grand Teton</option>
+                                <option value="OLYM">Olympic</option>
+                                <option value="ROMO">Rocky Mountain</option>
+                                <option value="YELL">Yellowstone</option>
+                                <option value="YOSE">Yosemite</option>
+                                <option value="SION">Zion</option>
+                            </select>
+                            <div class="col-auto parkSelect" style="font-weight: bold;">
+                                Park 2:
+                            </div>
+                            <select id="parksSelect2" class="form-select"
+                                    style="width: 70%" onchange="updateParks()">
+                                <option value="ACAD">Acadia</option>
+                                <option value="GLAC" selected>Glacier</option>
+                                <option value="GRCA">Grand Canyon</option>
+                                <option value="GRSM">Great Smoky Mountains</option>
+                                <option value="GRTE">Grand Teton</option>
+                                <option value="OLYM">Olympic</option>
+                                <option value="ROMO">Rocky Mountain</option>
+                                <option value="YELL">Yellowstone</option>
+                                <option value="YOSE">Yosemite</option>
+                                <option value="SION">Zion</option>
+                            </select>
+                            <div class="col-auto parkSelect" style="font-weight: bold;">
+                                Park 3:
+                            </div>
+                            <select id="parksSelect3" class="form-select"
+                                    style="width: 70%" onchange="updateParks()">
+                                <option value="ACAD">Acadia</option>
+                                <option value="GLAC">Glacier</option>
+                                <option value="GRCA" selected>Grand Canyon</option>
+                                <option value="GRSM">Great Smoky Mountains</option>
+                                <option value="GRTE">Grand Teton</option>
+                                <option value="OLYM">Olympic</option>
+                                <option value="ROMO">Rocky Mountain</option>
+                                <option value="YELL">Yellowstone</option>
+                                <option value="YOSE">Yosemite</option>
+                                <option value="SION">Zion</option>
+                            </select>
                         </div>
                     </div>
                 </div>
