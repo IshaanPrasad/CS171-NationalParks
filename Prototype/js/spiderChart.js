@@ -61,6 +61,14 @@ class SpiderChart {
             return {"x": vis.rad + x, "y": vis.rad - y};
         }
 
+        // append tooltip
+        vis.tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .attr("id", "spiderTooltip");
+
+
+        vis.displayData = []
+
         vis.spiderGroup = vis.svg.append("g")
 
         for (let i = 0; i < vis.features.length; i++) {
@@ -87,9 +95,53 @@ class SpiderChart {
             vis.spiderGroup.append("text")
                 .attr("x", label_coordinate.x)
                 .attr("y", label_coordinate.y)
-                .text(ft_name);
-        }
+                .text(ft_name)
+                .on("mouseover", function (event, d) {
+                    let key = ""
+                    let header = ""
+                    switch(ft_name) {
+                        case "Size":
+                            key = "Acres"
+                            header = "Size of Park (Acres)"
+                            break;
+                        case "Rare Species":
+                            key = "Species_ID_Rare"
+                            header = "Number of Rare Species"
+                            break;
+                        case "Nativeness":
+                            key = "Nativeness_nunique"
+                            header = "Number of Native Species"
+                            break;
+                        case "Endangered":
+                            key = "Species_ID_Endangered"
+                            header = "Number of Endangered Species"
+                            break;
+                        default:
+                            key = "Species_ID_nunique"
+                            header = "Number of Species in Park"
+                    }
+                    let innerHTML = `<b>${header} <br></b>`
+                    vis.displayData.forEach((park) => {
+                        innerHTML += `${park["Park Name"]}: ${park[key]} <br>`
+                    })
 
+                    vis.tooltip
+                        .style("opacity", 1)
+                        .style("left", event.pageX + 20 + "px")
+                        .style("top", event.pageY + "px")
+                        .html(
+                            `<div style="border: thin solid lightgrey; border-radius: 4px; background: rgb(249, 249, 246); padding: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;">
+                              ${innerHTML}
+                             </div>`);
+
+                    d3.select(this)
+                        .attr("stroke-width", "4px")
+                })
+                .on("mouseout", function (event, d) {
+                    vis.tooltip.style("opacity", 0).style("left", 0).style("top", 0).html(``);
+                    d3.select(this).attr("stroke-width", "0px");
+                });
+        }
 
         // Adding legend
         vis.legend = vis.svg.append("g")
@@ -156,6 +208,8 @@ class SpiderChart {
             .y(d => d.y);
         let colorScale = d3.scaleOrdinal(d3.schemeSet3).domain(vis.displayData)
 
+
+
         function getPathCoordinates(data_point){
             let coordinates = [];
             for (let i = 0; i < vis.features.length; i++){
@@ -165,8 +219,6 @@ class SpiderChart {
             }
             return coordinates;
         }
-
-        // console.log("DATA")
 
         let paths = vis.spiderGroup.selectAll(".paths").data(vis.displayData)
 
@@ -191,7 +243,6 @@ class SpiderChart {
             .attr("opacity", 0.5);
 
         // console.log(visColors)
-
 
         let legendValues = vis.legend.selectAll(".legendValues")
             .data(vis.displayData);
