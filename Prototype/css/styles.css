@@ -95,3 +95,12 @@ body {
 p {
     text-align:justify;
 }
+
+.dropdown {
+    margin-bottom: 30px;
+}
+
+.parkSelect {
+    margin-top: 10px;
+    magint-bottom: 10px;
+}
