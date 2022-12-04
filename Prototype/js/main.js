@@ -3,7 +3,7 @@
  * * * * * * * * * * * * * */
 
 // init global variables, switches, helper functions
-let barChart, mapVis, spiderChart, endangeredBarChart, endangeredInfoChart, chord, bumpChart, heatChart;
+let barChart, mapVis, spiderChart, endangeredBarChart, endangeredInfoChart, chord, bumpChart, heatChart, snapshot;
 let selectedState = "California";
 let selectedEndangeredPark = "Great Smoky Mountains National Park";
 
@@ -42,6 +42,8 @@ function initMainPage(allDataArray) {
   bumpChart = new BumpChart("bumpDiv", allDataArray[4]);
 
   heatChart = new HeatChart("heatDiv", allDataArray[4]);
+
+  snapshot = new SnapshotVis("snapshot", allDataArray[4]);
 
   // // Chart 5 (Spider Chart)
   spiderChart = new SpiderChart("spiderChart", allDataArray[3]);

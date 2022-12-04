@@ -69,7 +69,8 @@ class BumpChart {
     let dataByYear = Array.from(d3.group(vis.data, (d) => d.Year));
     dataByYear.sort((a, b) => +a[0] - +b[0]);
     // Take last 20 years
-    dataByYear = dataByYear.slice(-20);
+    dataByYear = dataByYear.filter((v) => +v[0] < 2022 && +v[0] > 2001);
+    // dataByYear = dataByYear.slice(-20);
     // console.log(dataByYear);
     dataByYear.forEach((_, index) => {
       dataByYear[index][1].sort((a, b) => Number(b.Total.split(",").join("")) - Number(a.Total.split(",").join("")));
