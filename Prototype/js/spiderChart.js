@@ -106,7 +106,7 @@ class SpiderChart {
             document.getElementById("parksSelect2").value,
             document.getElementById("parksSelect3").value]
 
-        console.log(selectedParks)
+        // console.log(selectedParks)
 
         vis.displayData = vis.data.filter(d => selectedParks.includes(d["Park Code"]));
 
