@@ -69,17 +69,9 @@ class MapSpecies {
 
     vis.parkData.forEach((park) => {
       let parkName = park["Park Name"];
-      let endangeredSpeciesHTML = "<br>";
-      let speciesArr = vis.endangeredSpecies[parkName];
-      if (speciesArr != undefined) {
-        vis.endangeredSpecies[parkName].forEach((speciesName) => {
-          endangeredSpeciesHTML += speciesName + "<br>";
-        });
-      } else {
-        endangeredSpeciesHTML += "No Endangered Species";
-      }
+      let parkCode = park["Park Code"].toLowerCase();
 
-      let popup = L.popup().setContent(`<p>Park Name: ${parkName} ${endangeredSpeciesHTML}</p>`);
+      let popup = L.popup().setContent(`<p><b>${parkName}</b> <br><br> Park Description: ${descriptionDict[parkCode]} <br><br> Weather Info: ${weatherInfo[parkCode]}</p>`);
       // let popup = L.popup().setContent(`<p>Station: ${station.name} <br /> Capacity: ${station.capacity}`)
       let marker = L.marker([park.Latitude, park.Longitude]).bindPopup(popup);
 

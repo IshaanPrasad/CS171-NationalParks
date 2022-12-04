@@ -36,9 +36,6 @@ function initMainPage(allDataArray) {
   // log data
   console.log(allDataArray);
 
-  // activity 1, pie chart
-  //   myPieChart = new PieChart("barDiv");
-
   // activity 2, force layout
   mapVis = new MapVis("mapDiv", allDataArray[0], allDataArray[1], allDataArray[2]);
   barChart = new BarChart("barDiv", allDataArray[1], allDataArray[2]);
