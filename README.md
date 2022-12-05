@@ -7,6 +7,15 @@ As frequent visitors to the Parks, we developed this data story to explore the c
 
 As the Parks celebrate their 150th anniversary, we hope to support and celebrate the biodiversity within them for generations to come.
 
+### Notable Features
+1. Implementation of three highly innovative views. All three views were built ***from scratch***.
+    a. **Bump Chart**, ranking parks by visitation numbers
+    b. **Heat Map**, visualizing visitation numbers by month
+    c. **Spider Chart**, plotting parks across five unique characteristics
+2. Development and coordination of two linked views.
+    a. Biodiversity Exploration Visualization, exploring the distribution of National Parks across the states, and the number of species within each state's parks
+    b. Species Spotlight View, highlighting vulnerable populations within each of the 10 selected parks
+
 ### Code and Data Sources
 Our primary national park data (parks, species, visitation) is from the National Park Service. We also use images of the parks from Getty. Images of species were scraped from Google images using a separate Python script.
 
