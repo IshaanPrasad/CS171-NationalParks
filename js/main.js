@@ -102,7 +102,7 @@ var myFullpage = new fullpage("#fullpage", {
   ],
   navigation: true,
   navigationPosition: "right",
-  navigationTooltips: [""],
+  navigationTooltips: [],
   showActiveTooltip: false,
   slidesNavigation: false,
   slidesNavPosition: "bottom",
@@ -143,8 +143,7 @@ var myFullpage = new fullpage("#fullpage", {
   controlArrows: true,
   controlArrowsHTML: ['<div class="fp-arrow"></div>', '<div class="fp-arrow"></div>'],
   verticalCentered: true,
-  sectionsColor: [], //["#C8DBBE", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#EDE4E0", "#C8DBBE"],
-  // paddingTop: "3em",
+  sectionsColor: [],
   paddingBottom: "10px",
   fixedElements: "#header, .footer",
   responsiveWidth: 0,
@@ -165,7 +164,7 @@ var myFullpage = new fullpage("#fullpage", {
 
   lazyLoading: true,
   observer: true,
-  credits: { enabled: false, label: "Christopher Cheng, Ishaan Prasad, Omar Shareef", position: "right" },
+  credits: { enabled: false, label: "Data Story Authored by: Christopher Cheng, Ishaan Prasad, Omar Shareef", position: "right" },
 
   // Events
   beforeLeave: function (origin, destination, direction, trigger) {},
