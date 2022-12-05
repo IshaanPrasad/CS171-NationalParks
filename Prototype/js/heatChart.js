@@ -38,7 +38,7 @@ class HeatChart {
       .append("g")
       .attr("class", "title bar-title")
       .append("text")
-      .text(`Visitation at the most popular parks in ${selectedHeatYear}`)
+      .text(`Visitation numbers in ${selectedHeatYear}`)
       .attr("transform", `translate(${vis.width / 4}, -60)`)
       .attr("text-anchor", "middle");
 
@@ -155,7 +155,7 @@ class HeatChart {
   updateVis() {
     let vis = this;
 
-    vis.title.text(`Visitation at the most popular parks in ${selectedHeatYear}`);
+    vis.title.text(`Visitation numbers in ${selectedHeatYear}`);
 
     // set scale domains
     vis.y.domain(

@@ -234,7 +234,7 @@ class MapVis {
       .attr("stroke", "grey")
       .attr("class", (d) => {
         if (d.properties.name === selectedState) {
-          return "state hovered";
+          return "state map-hovered";
         }
         return "state";
       })
