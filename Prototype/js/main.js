@@ -3,7 +3,7 @@
  * * * * * * * * * * * * * */
 
 // init global variables, switches, helper functions
-let barChart, mapVis, spiderChart, endangeredBarChart, endangeredInfoChart, chord, bumpChart, heatChart, snapshot;
+let barChart, mapVis, spiderChart, endangeredBarChart, endangeredInfoChart, bumpChart, heatChart, snapshot;
 let selectedState = "California";
 let selectedEndangeredPark = "Great Smoky Mountains National Park";
 
@@ -67,7 +67,7 @@ function updateParks() {
   spiderChart.wrangleData();
 }
 
-// Used for endangered charts
+// Used for visitation heatmap charts
 let selectedHeatYear = document.getElementById("yearSelector").value;
 
 function yearChange() {
