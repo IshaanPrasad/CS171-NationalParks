@@ -29,7 +29,7 @@ class SpiderChart {
 
         vis.rad = 260
 
-        console.log("HEIGHT", vis.height)
+        // console.log("HEIGHT", vis.height)
 
         // init drawing area
         vis.svg = d3
