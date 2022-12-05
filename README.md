@@ -30,4 +30,4 @@ All data is included in the repository. All code is written by us, except for th
 ### Links
 
 - Link to website: https://ishaanprasad.github.io/CS171-NationalParks/
-- Link to screencast: **TODO**
+- Link to screencast: https://drive.google.com/file/d/1YMJj-riwZklCEHlbrjN2VJh3Ja-ApmOB/view?usp=sharing
