@@ -27,7 +27,9 @@ class SpiderChart {
         vis.height =
             document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
-        vis.rad = vis.width/1.7
+        vis.rad = 260
+
+        console.log("HEIGHT", vis.height)
 
         // init drawing area
         vis.svg = d3
