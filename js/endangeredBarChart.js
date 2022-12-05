@@ -54,6 +54,9 @@ class EndangeredBarChart {
     vis.svg.append("g").attr("class", "x-axis axis").attr("transform", `translate(0, ${vis.height})`);
     vis.svg.append("g").attr("class", "y-axis axis");
 
+    // append tooltip
+    vis.tooltip = d3.select("body").append("div").attr("class", "tooltip").attr("id", "exploreBarTooltip");
+
     this.wrangleData();
   }
 
@@ -118,6 +121,19 @@ class EndangeredBarChart {
       .append("rect")
       .on("mouseover", function (e, d) {
         d3.select(this).style("cursor", "pointer");
+        vis.tooltip
+          .style("opacity", 1)
+          .style("left", e.pageX + 20 + "px")
+          .style("top", e.pageY + "px")
+          .html(
+            `
+          <div style="border: thin solid lightgrey; border-radius: 4px; background: rgb(249, 249, 246); padding: 12px; box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;">
+       ${d3.format(",")(d.species)} vulnerable species
+       </div>`
+          );
+      })
+      .on("mouseout", function (event, d) {
+        vis.tooltip.style("opacity", 0).style("left", 0).style("top", 0).html(``);
       })
       .on("click", function (e, d) {
         selectedEndangeredPark = d.name;
