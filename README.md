@@ -30,10 +30,10 @@ All data is included in the repository. All code is written by us, except for th
 
 ### Libraries Used
 - Bootstrap
-- d3
+- D3
 - Fullpage
 - Leaflet
-- Google fonts
+- Google Fonts
 - National Park Services API
 
 ### Links
