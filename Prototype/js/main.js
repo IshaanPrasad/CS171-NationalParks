@@ -36,34 +36,28 @@ function initMainPage(allDataArray) {
   // log data
   console.log(allDataArray);
 
-  // activity 2, force layout
-  mapVis = new MapVis("mapDiv", allDataArray[0], allDataArray[1], allDataArray[2]);
-  barChart = new BarChart("barDiv", allDataArray[1], allDataArray[2]);
-  bumpChart = new BumpChart("bumpDiv", allDataArray[4]);
-
-  heatChart = new HeatChart("heatDiv", allDataArray[4]);
-
-  snapshot = new SnapshotVis("snapshot", allDataArray[4]);
-
-  // // Chart 5 (Spider Chart)
-  spiderChart = new SpiderChart("spiderChart", allDataArray[3]);
-
-  // Chart 6 - Endangered Species
-  endangeredBarChart = new EndangeredBarChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
-  endangeredInfoChart = new EndangeredInfoChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
-
-  // Chart 7 - Endangered Species by Park
+  // Map of parks
   mapSpeciesChart = new MapSpecies("mapSpecies", allDataArray[1], allDataArray[2], [37.8, -96]);
 
-  // Chord
-  matrix = [
-    [204, 0, 0, 0],
-    [0, 488, 0, 0],
-    [0, 0, 855, 0],
-    [0, 0, 0, 332],
-  ];
+  // Exploring biodiversity
+  mapVis = new MapVis("mapDiv", allDataArray[0], allDataArray[1], allDataArray[2]);
+  barChart = new BarChart("barDiv", allDataArray[1], allDataArray[2]);
 
-  // chordChart = new Chord("chord", matrix);
+  // Snapshot of top 10
+  snapshot = new SnapshotVis("snapshot", allDataArray[4]);
+
+  // Park rankings
+  bumpChart = new BumpChart("bumpDiv", allDataArray[4]);
+
+  // Park visitation patterns
+  heatChart = new HeatChart("heatDiv", allDataArray[4]);
+
+  // // Spider chart
+  spiderChart = new SpiderChart("spiderChart", allDataArray[3]);
+
+  // Endangered species
+  endangeredBarChart = new EndangeredBarChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
+  endangeredInfoChart = new EndangeredInfoChart("endangeredBarDiv", allDataArray[1], allDataArray[2], allDataArray[4]);
 }
 
 // Used for SpiderChart
