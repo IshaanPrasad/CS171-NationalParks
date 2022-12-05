@@ -112,7 +112,7 @@ class SpiderChart {
                             header = "Number of Rare Species"
                             break;
                         case "Nativeness":
-                            key = "Nativeness_nunique"
+                            key = "Species_ID_Native"
                             header = "Number of Native Species"
                             break;
                         case "Endangered":
@@ -228,6 +228,8 @@ class SpiderChart {
 
         // Creating the actual layers in the spiderChart
         let paths = vis.spiderGroup.selectAll(".paths").data(vis.displayData)
+
+        console.log(vis.displayData)
 
         paths.exit().remove()
 
