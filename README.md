@@ -9,7 +9,7 @@ As the Parks celebrate their 150th anniversary, we hope to support and celebrate
 
 ### Notable Features
 1. Implementation of three highly innovative views. All three views were built ***from scratch***.
-    a. **Bump Chart**, ranking parks by visitation numbers
+    1. **Bump Chart**, ranking parks by visitation numbers
     b. **Heat Map**, visualizing visitation numbers by month
     c. **Spider Chart**, plotting parks across five unique characteristics
 2. Development and coordination of two linked views.
