@@ -41,7 +41,7 @@ class MapVis {
       .attr("class", "title")
       .attr("id", "map-title")
       .append("text")
-      .text("Unique species per state")
+      .text("Unique Species per State")
       .attr("transform", `translate(${vis.width / 2}, 20)`)
       .attr("text-anchor", "middle");
 
@@ -131,7 +131,7 @@ class MapVis {
       .attr("transform", `translate(${vis.width / 2}, ${vis.height - 20})`);
 
     // scales and axes
-    vis.x = d3.scaleLinear().range(["white", "#4b683b"]);
+    vis.x = d3.scaleLinear().range(["white", "#008067"]);
     vis.legendScale = d3.scaleLinear().range([0, 200]);
 
     vis.xAxis = d3.axisBottom().scale(vis.legendScale).ticks(2);
@@ -159,7 +159,7 @@ class MapVis {
       .append("stop")
       .attr("class", "end")
       .attr("offset", "100%")
-      .attr("stop-color", "#4b683b")
+      .attr("stop-color", "#008067")
       .attr("stop-opacity", 1);
 
     vis.legend
@@ -243,7 +243,7 @@ class MapVis {
         if (vis.stateInfo[abbrev]) {
           return vis.x(vis.stateInfo[abbrev].species);
         } else {
-          return "rgb(217, 83, 79, 0.2)";
+          return "#fff";
         }
       });
   }

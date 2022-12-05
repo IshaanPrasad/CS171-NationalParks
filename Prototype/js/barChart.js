@@ -39,7 +39,7 @@ class BarChart {
       .append("g")
       .attr("class", "title bar-title")
       .append("text")
-      .text(`Species per park in ${selectedState}`)
+      .text(`Species per Park in ${selectedState}`)
       .attr("transform", `translate(${vis.width / 2}, 10)`)
       .attr("text-anchor", "middle");
 
@@ -87,7 +87,7 @@ class BarChart {
   updateVis() {
     let vis = this;
 
-    vis.svg.select(".bar-title").select("text").text(`Species per park in ${selectedState}`);
+    vis.svg.select(".bar-title").select("text").text(`Species per Park in ${selectedState}`);
     // set scale domains
     vis.x.domain(vis.displayData.map((value) => value.name));
     vis.y.domain([0, d3.max(vis.displayData, (d) => d.species) * 1.1]);
