@@ -164,6 +164,8 @@ class SpiderChart {
 
         // console.log(selectedParks)
 
+        vis.selectedParkNames = selectedParks.map(parkCode => parkCodeNames[parkCode])
+
         vis.displayData = vis.data.filter(d => selectedParks.includes(d["Park Code"]));
 
         // console.log("DSIPLAY DATA")
@@ -249,8 +251,10 @@ class SpiderChart {
 
         // console.log(visColors)
 
+        console.log(vis.displayData)
+
         let legendValues = vis.legend.selectAll(".legendValues")
-            .data(vis.displayData);
+            .data(vis.selectedParkNames);
 
         legendValues.exit().remove();
 
@@ -263,17 +267,20 @@ class SpiderChart {
             .attr("fill", (d, i) => visColors[i])
             .attr("r", 10)
 
-        let legendText = vis.legend.selectAll(".legendText").data(vis.displayData)
+
+
+        let legendText = vis.legend.selectAll(".legendText").data(vis.selectedParkNames)
+
+        console.log(legendText)
 
         legendText.exit().remove()
 
         legendText.enter()
             .append("text")
+            .merge(legendText)
             .attr("class", "legendText")
-            .text(d => d["Park Name"])
+            .text(d => d)
             .attr("x", 20)
             .attr("y", (d, i) => (i * 30) + 10);
-
     }
-
 }

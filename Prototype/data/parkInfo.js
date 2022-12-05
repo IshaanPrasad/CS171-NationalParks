@@ -115,3 +115,17 @@ let weatherInfo = {
     "yose": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
     "zion": "Zion is known for a wide range of weather conditions. Temperatures vary with changes in elevation and day/night temperatures may differ by over 30°F. In summer, temperatures in Zion National Park often exceed 100°F/38°C. Zion experiences monsoons from mid-July into September that result in an increased risk of flash floods. Always be aware of the threat of storms and lightning and be prepared for a wide range of weather conditions. Winters are generally mild."
 }
+
+
+let parkCodeNames = {
+    "ACAD": "Acadia",
+    "GLAC": "Glacier",
+    "GRCA": "Grand Canyon",
+    "GRSM": "Great Smoky Mountains",
+    "GRTE": "Grand Teton",
+    "OLYM": "Olympic",
+    "ROMO": "Rocky Mountain",
+    "YELL": "Yellowstone",
+    "YOSE": "Yosemite",
+    "ZION": "Zion"
+}
