@@ -98,6 +98,7 @@ var myFullpage = new fullpage("#fullpage", {
     "spiderSection",
     "endangeredSection",
     "solutionSection",
+    "resourcesSection",
     "sourcesSection",
   ],
   navigation: true,
