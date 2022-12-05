@@ -73,6 +73,7 @@ class SpiderChart {
 
         vis.spiderGroup = vis.svg.append("g")
 
+        // Add axis lines and labels
         for (let i = 0; i < vis.features.length; i++) {
             let ft_name = vis.feature_names[i];
             let angle = (Math.PI / 2) + (2 * Math.PI * i / vis.features.length);
@@ -156,6 +157,7 @@ class SpiderChart {
     wrangleData() {
         let vis = this
 
+        // Updating the parks based on selection in dropdown
         let selectedParks = [document.getElementById("parksSelect1").value,
             document.getElementById("parksSelect2").value,
             document.getElementById("parksSelect3").value]
@@ -173,6 +175,7 @@ class SpiderChart {
     updateVis() {
         let vis = this
 
+        // Create scales for each of the dimensions
         let radialScale = d3.scaleLinear()
             .domain([0,10])
             .range([0,250]);
@@ -211,7 +214,6 @@ class SpiderChart {
         let colorScale = d3.scaleOrdinal(d3.schemeSet3).domain(vis.displayData)
 
 
-
         function getPathCoordinates(data_point){
             let coordinates = [];
             for (let i = 0; i < vis.features.length; i++){
@@ -222,6 +224,7 @@ class SpiderChart {
             return coordinates;
         }
 
+        // Creating the actual layers in the spiderChart
         let paths = vis.spiderGroup.selectAll(".paths").data(vis.displayData)
 
         paths.exit().remove()
