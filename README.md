@@ -1,4 +1,5 @@
-# The Parks at 150: Celebrating, Exploring, & Supporting Biodiversity within the U.S. National Parks
+# The Parks at 150: 
+## Celebrating, Exploring, & Supporting Biodiversity within the U.S. National Parks
 
 Throughout the world, environmental challenges threaten the existence of much of our planet’s biodiversity. In the U.S., the National Parks provide an excellent case study on how to protect the habitats of the nation’s most vulnerable species.
 
