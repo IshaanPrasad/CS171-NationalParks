@@ -1,4 +1,4 @@
-# The Parks at 150: 
+# The Parks at 150:
 ### Celebrating, Exploring, & Supporting Biodiversity within the U.S. National Parks
 
 Throughout the world, environmental challenges threaten the existence of much of our planet’s biodiversity. In the U.S., the National Parks provide an excellent case study on how to protect the habitats of the nation’s most vulnerable species.
@@ -23,7 +23,7 @@ How to Run the Code:
 For this project, we used WebStorm, however, any IDE can be used although directions may differ. Make sure all files are loaded into your IDE. To make sure that the HTML code is rendered properly in a production environment, we can preview the code. Begin by loading the index.html file. Then proceed to the View Tab. Hover over the Open in Browser option and select which browser you would like to open this project in. Our code is setup as a basic HTML/CSS/Javascript project, with the primary HTML file being `index.hmtl`. Everything needed to run the code is included in the repository.
 
 Project Structure:
-The root folder contains the general structure of our website, and provides containers used for our visualization. All the data required for the project is located in the /data folder. All javascript files, which include separate .js components for each of our visualizations are located in the /js folder. 
+The root folder contains the general structure of our website, and provides containers used for our visualization. All the data required for the project is located in the /data folder. We also provide a detailed data description within this directory. All javascript files, which include separate .js components for each of our visualizations are located in the /js folder.
 
 All data is included in the repository. All code is written by us, except for the libraries listed below.
 
