@@ -31,7 +31,7 @@ All data is included in the repository. All code is written by us, except for th
 ### Libraries Used
 - Bootstrap
 - D3
-- Fullpage
+- FullPage
 - Leaflet
 - Google Fonts
 - National Park Services API
