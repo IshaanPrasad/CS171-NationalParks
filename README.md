@@ -10,10 +10,6 @@ For this project, we used WebStorm, however, any IDE can be used although direct
 
 All code is written by us, except for the libraries listed below.
 
-
-Libraries Used:
-D3 was used for the visualizations. Bootstrap was used for design of the web components. Leaflet was used for one of our map visualizations (Visualization No. 1). The National Park Service API was also used in order to get data that was required for some of the visualizations we made. The FullPage.js library was used to structure our website and offer more styling.
-
 Project Structure:
 All the data required for the project is located in the /data folder. Most styling components are done in the files in /css folder, however, there were certain components where inline styling was used. All javascript files, which include separate .js components for each of our visualizations are located in the /js folder. The index.html folder contains the general structure of our website, and provides containers used for our visualization.
 
@@ -26,6 +22,7 @@ All data is included in the repository.
 - Fullpage
 - Leaflet
 - Google fonts
+- National Park Services API
 
 ### Links
 
