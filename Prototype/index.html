@@ -40,17 +40,20 @@
                         <h1><b>About this Data Story</b></h1>
                         <h4><i>Raising Awareness for Threatened and Endangered Species within the Parks</i></h4>
                         <p> Throughout the world, industrial development, habitat loss, and changing climate patterns
-                            due to human activities threaten the existence of much of the planet’s biodiversity.
+                            due to human activities <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%);
+                            background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                threaten the existence of much of the planet’s biodiversity.</b>
                             <br /><br />
                             In the United States, the National Park System provides a case study in protecting and
                             preserving the critical habitats of endangered and threatened species.
                             <br /><br />
-                            As frequent visitors to our Nation’s Parks, our team grew interested in better understanding
+                            As <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%);
+                            background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                            frequent visitors to our Nation’s Parks,</b> our team grew interested in better understanding
                             the threatened and endangered species that the parks are protecting.
                             <br /><br />
-                            Consequently, we developed this Data Story to shine a light on the species present within
-                            the nation’s most visited parks and to highlight opportunities for viewers to take action.
-                            As the Parks celebrate their 150th anniversary, we hope to support and celebrate the
+                            Consequently, we developed this Data Story to raise awareness on the species present within the nation’s most visited parks and to
+                            highlight opportunities for viewers to take action. As the Parks celebrate their 150th anniversary, we hope to support and celebrate the
                             biodiversity within them for generations to come.
                         </p>
                     </div>
@@ -96,7 +99,7 @@
         </div>
         <div class="section">
             <div class="container-fluid">
-                <h1>A Snapshot of the Nation's Most Visited Parks</h1>
+                <h1><b>A Snapshot of the Nation's Most Visited Parks</b></h1>
                 <p> From our exploration thus far, it's clear that the U.S. National Parks are rife with biodiversity.
                     To provide
                     greater focus on regions with the most potential for positive impact through increased awareness,
@@ -181,33 +184,23 @@
                             <option value="2002">2002</option>
                         </select>
                     </div>
-                    <div id="heatDiv" style="height: 61vh; background-color: rgb(246, 246, 248)"></div>
+                    <div id="heatDiv" style="height: 61vh; background-color: #f7f1e3; box-shadow: inset 0 0 10px #84817a;"></div>
                 </div>
             </div>
         </div>
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
-                    <h1>Comparing the Parks</h1>
+                    <h1><b>Comparing the Parks</b></h1>
+                    <h4><i>Contextualizing the Unique Profiles of Each Park</i></h4>
                     <p> Diversity within the parks extends beyond species counts and visitation numbers. To better
-                        contextualize our ten selected parks and visualize each park's unique profile, we plotted the
-                        following characteristics: [i] number of species, [ii] size, [iii] rare species, [iv]
-                        nativeness,
-                        and [v] endangered status
-
-
-
-                        We realized after examining the species in the parks, that biodiversity encompasses a range
-                        of
-                        different factors and components. As such, we utilized a spider chart to be able to compare
-                        parks
-                        on different dimensions as it relates to biodiversity which could also help us explore
-                        different
-                        trends that contribute to visitation. </p>
+                        contextualize and analyze each park's unique profile, we plotted the following characteristics:
+                        [i] number of species, [ii] size, [iii] rare species, [iv] nativeness, and [v] endangered status.</p>
                     <!-- Container for spiderChart -->
                     <div class="row" style="height: 600px">
-                        <div class="alert alert-success" style="width: 50%" role="alert">
-                            Select up to 3 parks to compare them across the 5 highlighted dimensions.
+                        <div class="alert alert-success" style="width: 100%" role="alert">
+                            Select up to 3 parks to compare them across the 5 highlighted dimensions. Hover over the labels
+                            for one of the five characteristics to explore corresponding numerical data.
                         </div>
                         <div class="col-md-8">
                             <div id="spiderChart" style="height: 600px;">
@@ -218,7 +211,8 @@
                                 Park 1:
                             </div>
                             <select id="parksSelect1" class="form-select" style="width: 70%" onchange="updateParks()">
-                                <option value="ACAD" selected>Acadia</option>
+                                <option value="" selected>None</option>
+                                <option value="ACAD">Acadia</option>
                                 <option value="GLAC">Glacier</option>
                                 <option value="GRCA">Grand Canyon</option>
                                 <option value="GRSM">Great Smoky Mountains</option>
@@ -228,14 +222,14 @@
                                 <option value="YELL">Yellowstone</option>
                                 <option value="YOSE">Yosemite</option>
                                 <option value="ZION">Zion</option>
-                                <option value="">None</option>
                             </select>
                             <div class="col-auto parkSelect" style="font-weight: bold;">
                                 Park 2:
                             </div>
                             <select id="parksSelect2" class="form-select" style="width: 70%" onchange="updateParks()">
+                                <option value="" selected>None</option>
                                 <option value="ACAD">Acadia</option>
-                                <option value="GLAC" selected>Glacier</option>
+                                <option value="GLAC">Glacier</option>
                                 <option value="GRCA">Grand Canyon</option>
                                 <option value="GRSM">Great Smoky Mountains</option>
                                 <option value="GRTE">Grand Teton</option>
@@ -244,15 +238,15 @@
                                 <option value="YELL">Yellowstone</option>
                                 <option value="YOSE">Yosemite</option>
                                 <option value="ZION">Zion</option>
-                                <option value="">None</option>
                             </select>
                             <div class="col-auto parkSelect" style="font-weight: bold;">
                                 Park 3:
                             </div>
                             <select id="parksSelect3" class="form-select" style="width: 70%" onchange="updateParks()">
+                                <option value="" selected>None</option>
                                 <option value="ACAD">Acadia</option>
                                 <option value="GLAC">Glacier</option>
-                                <option value="GRCA" selected>Grand Canyon</option>
+                                <option value="GRCA">Grand Canyon</option>
                                 <option value="GRSM">Great Smoky Mountains</option>
                                 <option value="GRTE">Grand Teton</option>
                                 <option value="OLYM">Olympic</option>
@@ -260,7 +254,6 @@
                                 <option value="YELL">Yellowstone</option>
                                 <option value="YOSE">Yosemite</option>
                                 <option value="ZION">Zion</option>
-                                <option value="">None</option>
                             </select>
                         </div>
                     </div>
@@ -270,13 +263,15 @@
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
-                    <h1>Chart 5</h1>
-                    <p> To further examine the broad category of species, we wanted to take a look to see if the
-                        presence
-                        of certain endangered species may contribute to visitation. So, this visualization allows us
-                        to filter certain parks and the see the number of endangered species that are present. </p>
-                    <h2>DRAFT: How many species in the Park(s) are endangered?</h2>
-                    <p>TODO: Provide mechanism for filtering parks and endangered status.</p>
+                    <h1><b>Species Spotlight</b></h1>
+                    <h4><i>Raising Awareness for the Parks' Most Vulnerable Species</i></h4>
+                    <p> Having considered the unique profiles of the National Parks from a multifaceted lense, we now turn to highlighting
+                        the vulnerable populations present within each of the 10 selected parks.</p>
+                    <div class="alert alert-success" style="width: 100%" role="alert">
+                        Select a park by clicking on the respective bar to the left. From there, you can explore specific
+                        vulnerable species by hovering over the list provided on the right. Furthermore, you can filter
+                        these species by selecting a conservations status category on the dropdown above the list.
+                    </div>
                     <div class="row">
                         <div class="col-md-6" id="endangeredBarDiv" style="height: 71vh;"></div>
                         <div class="col-md-6" id="endangeredInfoDivDiv" style="height: 71vh;">
@@ -351,15 +346,65 @@
         <div class="section">
             <div class="container-fluid">
                 <div class="row">
-                    <h1>Solution</h1>
-                    <p>From this exploration, it is clear that visitation is impacted by the biodiversity of
-                        tha national parks. Therefore, in addition to the ethical implications of maintaining
-                        biodiversity, there is also a practical reason since biodiversity helps drive
-                        traffic to the parks and contributes to ecotourism in many states.
-                        To maintain the great biodiversity of the national parks and the world,
-                        we hope our insights on the national parks can provide a way for people
-                        to appreciate our ecosystems and steer efforts towards protecting our
-                        biodiversity.</p>
+                    <h1><b>Moving Forward</b></h1>
+                    <p style="font-size: 20px"> As humanity continues to work together to protect the biodiversity on our planet,
+                        the U.S. National Park System serves as an excellent example of an institution that has
+                        <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%); background-repeat: no-repeat;
+                        background-size: 100% 50%; background-position: 0 60%;">set the standard for the conservation and
+                        restoration of vulnerable populations.</b> These protected areas provide safe havens for a wide
+                        range of plants and animals, allowing them to thrive and reproduce without the threat of human interference.
+                            <br /><br/>
+                        In addition to providing safe habitats, National Parks often employ a variety of strategies to
+                        restore and conserve vulnerable species. These can include <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%);
+                        background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">habitat
+                        restoration, reintroduction programs, and conservation breeding efforts.</b>
+                            <br /><br/>
+                        One of the most well-known examples of these purposeful reintroduction efforts is the Yellowstone
+                        Wolf Restoration Project. In the mid-1990s, wolves were reintroduced to Yellowstone National Park
+                        after being nearly extirpated from the area. This effort has been incredibly successful, with the
+                        wolf population now thriving and <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%);
+                        background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">playing a key
+                            role in the park's ecosystem.</b>
+                            <br /><br/>
+                        Ultimately, increased biodiversity and visitation numbers can work in a <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%);
+                        background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">symbiotic cycle of positive
+                        reinforcement.</b> In particular, many park visitors are often drawn to these protected regions to see a wide
+                        range of plants and animals, and National Parks with high levels of biodiversity are likely to be more popular with visitors.
+                             <br /><br/>
+                        In turn, highly visited National Parks can be extremely helpful for protecting vulnerable species.
+                        The increased attention and resources provided by high levels of visitation can help support
+                        conservation and restoration efforts, ensuring that these species continue to thrive and recover.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1><b>How to Help</b></h1>
+                    <h4><i>Five Ways to Support National Parks and their Vulnerable Populations</i></h4>
+                    <ol style="font-size:20px; padding-left:50px">
+                        <li>
+                            <b style="background: linear-gradient(120deg, #ff6b6b 0%, #ff6b6b 80%); background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                Visit</b> the National Parks and support conservation efforts by paying the park entrance fee. This money helps fund the park's operations and conservation efforts.
+                        </li>
+                        <li>
+                            <b style="background: linear-gradient(120deg, #fed57a 0%, #fed57a 80%); background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                Volunteer</b> conservation efforts by purchasing products made from sustainable materials and by practicing sustainable habits, such as reducing your carbon footprint and conserving water.
+                        </li>
+                        <li>
+                            <b style="background: linear-gradient(120deg, #1dd1a1 0%, #1dd1a1 80%); background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                Support</b> your time at a national park. Many national parks offer volunteer opportunities that range from trail maintenance to animal monitoring.
+                        </li>
+                        <li>
+                            <b style="background: linear-gradient(120deg, #54a0ff 0%, #54a0ff 80%); background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                Educate</b> yourself and others about the importance of national parks and their endangered species. Share information about the parks and their conservation efforts on social media and with friends and family. <i>Sharing this Project can be a great first step!</i>
+                        </li>
+                        <li>
+                            <b style="background: linear-gradient(120deg, #f368e0 0%, #f368e0 80%); background-repeat: no-repeat; background-size: 100% 50%; background-position: 0 60%;">
+                                Donate</b> organizations that support national parks and their conservation efforts, such as the <a href="https://give.nationalparks.org/" target="_blank">National Park Foundation</a> or the <a href="https://www.worldwildlife.org/pages/ways-to-support-wwf" target="_blank">World Wildlife Fund</a>.
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>

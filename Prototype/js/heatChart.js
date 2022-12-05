@@ -68,7 +68,7 @@ class HeatChart {
       .range([padding, vis.height - padding])
       .padding(0.2);
 
-    vis.heatScale = d3.scaleLinear().range(["white", "#D9534F"]);
+    vis.heatScale = d3.scaleLinear().range(["white", "#008067"]);
 
     vis.xAxis = d3.axisTop().scale(vis.x);
     vis.yAxis = d3.axisLeft().scale(vis.y);
@@ -112,7 +112,7 @@ class HeatChart {
       .append("stop")
       .attr("class", "end")
       .attr("offset", "100%")
-      .attr("stop-color", "#D9534F")
+      .attr("stop-color", "#008067")
       .attr("stop-opacity", 1);
 
     vis.legend

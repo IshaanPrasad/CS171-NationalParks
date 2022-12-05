@@ -18,21 +18,24 @@
     opacity: 0.7;
 }
 
-.state, .bars {
-    stroke-width: 1px;
-    stroke: #665A48;
+.state {
+    /*stroke-width: 1px;*/
+    /*stroke: #fff;*/
 }
 .bars {
-    fill: #4b683b;
+    fill: #008067;
 }
+
+rect:hover {
+    fill: #00b894;
+}
+
 .hovered {
-    stroke-width: 2px; 
-    stroke: #9F8772;
-    fill: #E6BA95;
+    fill: #003d31;
 }
 .map-hovered {
     stroke-width: 6px; 
-    stroke: rgb(50, 130, 184);
+    stroke: #00b390;
 }
 
 body {

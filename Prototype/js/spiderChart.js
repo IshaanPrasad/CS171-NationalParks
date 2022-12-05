@@ -211,7 +211,7 @@ class SpiderChart {
         let line = d3.line()
             .x(d => d.x)
             .y(d => d.y);
-        let colorScale = d3.scaleOrdinal(d3.schemeSet3).domain(vis.displayData)
+        let colorScale = d3.scaleOrdinal(d3.schemeSet1).domain(vis.displayData)
 
 
         function getPathCoordinates(data_point){
@@ -261,11 +261,11 @@ class SpiderChart {
             .attr("cx", 0)
             .attr("cy", (d, i) => i * 30)
             .attr("fill", (d, i) => visColors[i])
-            .attr("r", 10)
+            .attr("r", 10);
 
-        let legendText = vis.legend.selectAll(".legendText").data(vis.displayData)
+        let legendText = vis.legend.selectAll(".legendText").data(vis.displayData);
 
-        legendText.exit().remove()
+        legendText.exit().remove();
 
         legendText.enter()
             .append("text")
