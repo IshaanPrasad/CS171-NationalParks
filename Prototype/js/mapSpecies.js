@@ -23,10 +23,16 @@ class MapSpecies {
   initVis() {
     let vis = this;
 
-    vis.stationMap = L.map(vis.parentElement).setView(vis.startingCoord, 3);
+    let SouthEast = L.latLng(-90,180),
+        NorthWest = L.latLng(90,-180),
+        Bounds = L.latLngBounds(SouthEast,NorthWest);
+
+    vis.stationMap = L.map(vis.parentElement, {maxBounds: Bounds}).setView(vis.startingCoord, 3);
 
     L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      nowrap: true,
+      bounds: Bounds
     }).addTo(vis.stationMap);
 
     L.Icon.Default.imagePath = "img/";
